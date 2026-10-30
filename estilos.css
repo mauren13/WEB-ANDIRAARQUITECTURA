@@ -5,13 +5,15 @@
 :root{
   --accent:#E6007E;      /* DEFINITIVO: fucsia #E6007E (decisión de Mauren, 2026-10-30). Probados y descartados: flor de Andira inermis (almendro de montaña), de donde nace el nombre ANDIRA: #E33276 (CMYK 3/90/21/0). Coral probado: #DC4141. Azul ANDIRA #565C80 (a Steph no le gustó: se siente vacío). FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima oscuro),
                             azul ANDIRA #565C80 (NCS S 5030-R70B), amarillo original de Patch #ffde00 */
-  --on-accent:#FFFFFF;   /* texto sobre el color de énfasis */
+  --on-accent:#E3E1E3;   /* texto sobre el color de énfasis (sin blanco puro) */
   /* Escala de grises ANDIRA (escala-grises.html), de claro a oscuro. Se usa toda MENOS el negro puro #000000. */
   --g0:#FFFFFF; --g1:#E3E1E3; --g2:#CBCACE; --g3:#B4B3B6; --g4:#9E9CA0; --g5:#88878C; --g6:#757479;
   --g7:#636269; --g8:#525157; --g9:#424046; --g10:#333338; --g11:#24242A; --g12:#18191E; --g13:#0B0C0E;
+  /* Sin negro puro. Fondo blanco (el gris #E3E1E3 de fondo se probó y no gustó). Textos claros en --g1. */
   --paper:var(--g0);     /* fondo */
-  --soft:var(--g1);      /* fondos claros, líneas, placeholder de imágenes (antes gris verdoso ANDIRA #D2D9D8) */
-  --on-dark:var(--g2);   /* texto secundario sobre fondo oscuro */
+  --light:var(--g1);     /* texto claro sobre fondos oscuros o imágenes */
+  --soft:var(--g1);      /* fondos claros, líneas, placeholder de imágenes */
+  --on-dark:var(--g1);   /* texto secundario sobre fondo oscuro */
   --muted:var(--g5);     /* etiquetas, fechas, pie */
   --gray:var(--g9);      /* texto corrido */
   --ink:var(--g12);      /* títulos, menú, logo y fondos oscuros */
@@ -39,8 +41,19 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .logo{display:block;flex:0 0 auto;width:112px}
 .logo img{height:auto;object-fit:contain}
 .nav{list-style:none;padding-top:2px}
+/* Subrayado del menú en degradado: el fucsia se aclara un paso en cada sección (100 %, 75 %, 52 %, 32 % del fucsia sobre blanco) */
+:root{--fucsia-1:#E6007E;--fucsia-2:#EC409E;--fucsia-3:#F27ABC;--fucsia-4:#F7ADD6}
+.nav li:nth-child(1){--line:var(--fucsia-1)}   /* Proyectos */
+.nav li:nth-child(2){--line:var(--fucsia-2)}   /* Colaboraciones */
+.nav li:nth-child(3){--line:var(--fucsia-3)}   /* Bitácora */
+.nav li:nth-child(4){--line:var(--fucsia-4)}   /* Estudio */
+/* Pestañita de cada publicación con el fucsia de su sección. En fucsia 3 y 4 el texto va oscuro para que se lea. */
+.cat.f1{background:var(--fucsia-1)!important}
+.cat.f2{background:var(--fucsia-2)!important}
+.cat.f3{background:var(--fucsia-3)!important;color:var(--ink)!important}
+.cat.f4{background:var(--fucsia-4)!important;color:var(--ink)!important}
 .nav a{font:300 24px/1.42 Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
-  background:linear-gradient(var(--accent),var(--accent)) left 92%/0 4px no-repeat;padding-bottom:3px;transition:background-size .35s var(--ease)}
+  background:linear-gradient(var(--line,var(--accent)),var(--line,var(--accent))) left 92%/0 4px no-repeat;padding-bottom:3px;transition:background-size .35s var(--ease)}
 .nav a:hover,.nav a[aria-current]{background-size:100% 4px}
 .social{display:flex;gap:18px;margin-top:22px;list-style:none}
 .social a{display:block;width:16px;height:16px;color:var(--ink);transition:color .25s,transform .25s var(--ease)}
@@ -55,12 +68,19 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card__link{display:block}
 
 /* Pestaña superior: categoría + lugar o año */
-.meta{position:absolute;left:var(--indent);bottom:100%;padding-bottom:9px;display:flex;align-items:center;gap:10px;white-space:nowrap;
+/* Pestañita medida en Patch: caja 30 px (6 + 17.875 + 6), 14 px a los lados, Roboto 400 11 px;
+   con la publicación ya bajada 15 px queda a 8 px del borde de la imagen. */
+.meta{position:absolute;left:var(--indent);bottom:calc(100% - 7px);padding-bottom:0;display:flex;align-items:center;gap:10px;white-space:nowrap;
   opacity:0;transform:translateY(26px);transition:opacity .3s var(--ease),transform .45s var(--ease);pointer-events:none;z-index:0}
 .card:hover .meta,.card:focus-within .meta{opacity:1;transform:none}
-.meta .cat{background:var(--accent);color:var(--on-accent);font:500 11px/1 Roboto,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 7px 4px}
-.meta .date{font:400 11px/1 Roboto,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
-.card--side .meta,.card--dark .meta,.card--overlap .meta{left:0}
+.meta .cat{background:var(--accent);color:var(--on-accent);font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;padding:6px 14px}
+.meta .date{font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;color:var(--ink)}
+/* Autor y fecha como en Patch: «Por MAUREN LÓPEZ / OCT 30, 2026». «Por» va en minúscula; nombre y fecha en mayúsculas. */
+.meta .by,.post__meta .by{font:400 11px/17.875px Roboto,sans-serif;color:var(--ink);text-transform:none;white-space:nowrap}
+.meta .by b,.post__meta .by b{font-weight:400;text-transform:uppercase}
+.meta .by + .date,.post__meta .by + .date{margin-left:-6px}
+.meta .by + .date::before,.post__meta .by + .date::before{content:"/";margin:0 4px}
+.meta .pend,.post__meta .pend{color:var(--muted)}   /* «pendiente»: dato por completar */.card--side .meta,.card--dark .meta,.card--overlap .meta{left:0}
 .card--side.right .meta{left:auto;right:0}
 
 /* Como en Patch: al pasar el cursor la publicación baja 15 px y la pestaña sale desde atrás de la imagen */
@@ -71,7 +91,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card__img{position:relative;overflow:hidden;aspect-ratio:var(--r,4/3);background:var(--soft);z-index:1}
 .card__img img{filter:grayscale(1);transition:filter .6s var(--ease)}
 .card__img::after{content:"";position:absolute;inset:0;background:rgba(24,25,30,.22);opacity:0;transition:opacity .45s var(--ease)}
-.more{position:absolute;left:50%;top:50%;z-index:1;color:var(--g0);font:500 26px/1 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
+.more{position:absolute;left:50%;top:50%;z-index:1;color:var(--light);font:500 26px/1 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
   opacity:0;transform:translate(-50%,calc(-50% + 8px));transition:opacity .35s var(--ease),transform .45s var(--ease)}
 .card:hover .card__img img,.card:focus-within .card__img img{filter:grayscale(0)}
 .card:hover .card__img::after{opacity:1}
@@ -110,12 +130,13 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* Caja oscura montada sobre la imagen */
 .card--overlap .box{position:relative;z-index:2;background:var(--ink);margin:-64px calc(var(--bleed) * -1) 0 var(--indent);padding:14px 20px 16px}
-.card--overlap .box .card__title{color:var(--g0);font-size:30px;line-height:1.27}
+.card--overlap .box .card__title{color:var(--light);font-size:30px;line-height:1.27}
 .card--overlap .card__body{padding-top:12px}
 
 /* Solo texto, fondo oscuro */
-.card--dark .inner{display:block;background:var(--ink);padding:28px 28px 26px}
-.card--dark .card__title{color:var(--g0);font-size:24px;line-height:1.55;font-weight:500;letter-spacing:0}
+.card--dark .inner{display:block;background:var(--g13);padding:28px 28px 26px;transition:background-color .45s var(--ease),transform .45s var(--ease)}
+.card--dark:hover .inner,.card--dark:focus-within .inner{background:var(--g13)}   /* solo texto: #0B0C0E (RGB 11, 12, 14), pedido por Mauren; al pasar el cursor la tarjeta solo baja 15 px */
+.card--dark .card__title{color:var(--light);font-size:24px;line-height:1.55;font-weight:500;letter-spacing:0}
 .card--dark .facts{margin-top:14px;list-style:none}
 .card--dark .facts li,.card--dark p.small{color:var(--on-dark)}
 .card--dark .facts li + li{margin-top:6px}
@@ -141,8 +162,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 /* ---------- Artículo: una columna, imágenes dentro del texto (p. ej. escala-grises.html) ---------- */
 .post{max-width:700px;margin:0 0 72px 156px}   /* 156 px = logo + espacio: el texto arranca alineado con el menú */
 .post__meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.post__meta .cat{background:var(--accent);color:var(--on-accent);font:500 11px/1 Roboto,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 7px 4px}
-.post__meta .date{font:400 11px/1 Roboto,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.post__meta .cat{background:var(--accent);color:var(--on-accent);font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;padding:6px 14px}
+.post__meta .date{font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;color:var(--ink)}
 .post__title{font:400 44px/1.2 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
 .post h2{margin:44px 0 0;font:400 24px/1.35 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .post p{margin-top:14px;font-size:16px;line-height:1.75;color:var(--gray)}
