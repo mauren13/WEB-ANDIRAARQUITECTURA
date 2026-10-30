@@ -3,14 +3,18 @@
 
 /* ---------- Colores y medidas (cambiar aquí) ---------- */
 :root{
-  --accent:#565C80;      /* VERSIÓN AZUL para Stephanie. FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima #171617),
+  --accent:#565C80;      /* Por ahora azul ANDIRA #565C80. FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima oscuro),
                             azul ANDIRA #565C80 (NCS S 5030-R70B), amarillo original de Patch #ffde00 */
-  --on-accent:#ffffff;   /* texto sobre el color de énfasis */
-  --soft:#D2D9D8;        /* gris claro ANDIRA (NCS S 1005-B20G) */
-  --ink:#171617;
-  --gray:#2a2c29;
-  --muted:#8a8b8c;
-  --paper:#ffffff;
+  --on-accent:#FFFFFF;   /* texto sobre el color de énfasis */
+  /* Escala de grises ANDIRA (escala-grises.html), de claro a oscuro. Se usa toda MENOS el negro puro #000000. */
+  --g0:#FFFFFF; --g1:#E3E1E3; --g2:#CBCACE; --g3:#B4B3B6; --g4:#9E9CA0; --g5:#88878C; --g6:#757479;
+  --g7:#636269; --g8:#525157; --g9:#424046; --g10:#333338; --g11:#24242A; --g12:#18191E; --g13:#0B0C0E;
+  --paper:var(--g0);     /* fondo */
+  --soft:var(--g1);      /* fondos claros, líneas, placeholder de imágenes (antes gris verdoso ANDIRA #D2D9D8) */
+  --on-dark:var(--g2);   /* texto secundario sobre fondo oscuro */
+  --muted:var(--g5);     /* etiquetas, fechas, pie */
+  --gray:var(--g9);      /* texto corrido */
+  --ink:var(--g12);      /* títulos, menú, logo y fondos oscuros */
   /* Medidas tomadas de Patch */
   --gutter:24px;         /* espacio entre columnas */
   --indent:48px;         /* sangría del texto respecto al borde de la imagen */
@@ -66,8 +70,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 /* Imagen: en blanco y negro; al pasar el cursor toma color y aparece "Ver" */
 .card__img{position:relative;overflow:hidden;aspect-ratio:var(--r,4/3);background:var(--soft);z-index:1}
 .card__img img{filter:grayscale(1);transition:filter .6s var(--ease)}
-.card__img::after{content:"";position:absolute;inset:0;background:rgba(23,22,23,.22);opacity:0;transition:opacity .45s var(--ease)}
-.more{position:absolute;left:50%;top:50%;z-index:1;color:#fff;font:500 26px/1 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
+.card__img::after{content:"";position:absolute;inset:0;background:rgba(24,25,30,.22);opacity:0;transition:opacity .45s var(--ease)}
+.more{position:absolute;left:50%;top:50%;z-index:1;color:var(--g0);font:500 26px/1 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
   opacity:0;transform:translate(-50%,calc(-50% + 8px));transition:opacity .35s var(--ease),transform .45s var(--ease)}
 .card:hover .card__img img,.card:focus-within .card__img img{filter:grayscale(0)}
 .card:hover .card__img::after{opacity:1}
@@ -106,24 +110,24 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* Caja oscura montada sobre la imagen */
 .card--overlap .box{position:relative;z-index:2;background:var(--ink);margin:-64px calc(var(--bleed) * -1) 0 var(--indent);padding:14px 20px 16px}
-.card--overlap .box .card__title{color:#fff;font-size:30px;line-height:1.27}
+.card--overlap .box .card__title{color:var(--g0);font-size:30px;line-height:1.27}
 .card--overlap .card__body{padding-top:12px}
 
 /* Solo texto, fondo oscuro */
 .card--dark .inner{display:block;background:var(--ink);padding:28px 28px 26px}
-.card--dark .card__title{color:#fff;font-size:24px;line-height:1.55;font-weight:500;letter-spacing:0}
+.card--dark .card__title{color:var(--g0);font-size:24px;line-height:1.55;font-weight:500;letter-spacing:0}
 .card--dark .facts{margin-top:14px;list-style:none}
-.card--dark .facts li,.card--dark p.small{color:var(--soft)}
+.card--dark .facts li,.card--dark p.small{color:var(--on-dark)}
 .card--dark .facts li + li{margin-top:6px}
-.card--dark cite{display:block;margin-top:18px;font:500 15px/1 Oswald,sans-serif;text-transform:uppercase;font-style:normal;color:var(--soft)}
-.card--dark .contact{margin-top:12px;line-height:1.7;color:var(--soft);text-align:left}
-.card--dark .contact a{border-bottom:1px solid rgba(210,217,216,.35);transition:border-color .25s}
-.card--dark .contact a:hover{border-color:var(--soft)}
+.card--dark cite{display:block;margin-top:18px;font:500 15px/1 Oswald,sans-serif;text-transform:uppercase;font-style:normal;color:var(--on-dark)}
+.card--dark .contact{margin-top:12px;line-height:1.7;color:var(--on-dark);text-align:left}
+.card--dark .contact a{border-bottom:1px solid rgba(203,202,206,.35);transition:border-color .25s}
+.card--dark .contact a:hover{border-color:var(--on-dark)}
 
 /* Solo texto, título grande */
 .card--text .card__body{padding-top:0}
 .card--text .card__title{font-size:30px;line-height:1.33}
-.card--text .inner{padding-left:var(--indent)}
+.card--text .inner{display:block;padding-left:var(--indent)}
 .card--text.tint .inner{background:var(--soft);padding:24px 24px 22px var(--indent)}
 .card--text .inner p{margin-top:10px}
 .card .list{list-style:none;margin-top:12px}
@@ -134,8 +138,48 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card__body > .label:first-child{margin-top:4px}
 .link-more.back:hover i,.card:hover .link-more.back i{transform:translateX(-5px)}
 
+/* ---------- Artículo: una columna, imágenes dentro del texto (p. ej. escala-grises.html) ---------- */
+.post{max-width:700px;margin:0 0 72px 156px}   /* 156 px = logo + espacio: el texto arranca alineado con el menú */
+.post__meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.post__meta .cat{background:var(--accent);color:var(--on-accent);font:500 11px/1 Roboto,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 7px 4px}
+.post__meta .date{font:400 11px/1 Roboto,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.post__title{font:400 44px/1.2 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.post h2{margin:44px 0 0;font:400 24px/1.35 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.post p{margin-top:14px;font-size:16px;line-height:1.75;color:var(--gray)}
+.post__lead{font-size:19px!important;line-height:1.6!important;margin-top:20px!important}
+.post__fig{margin:32px 0 8px}
+.post__fig img{height:auto;object-fit:contain}
+.post__fig figcaption,.post__fig + .label{margin-top:10px;font:500 11px/1.4 Roboto,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.post__fig.side{float:right;width:270px;margin:18px 0 16px 36px}
+.post h2{clear:both}
+.post__fig.tall{width:62%}
+.post h3{margin:28px 0 0;font:400 19px/1.4 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.post .list{list-style:none;margin-top:14px}
+.post .list li{position:relative;padding-left:16px;font-size:16px;line-height:1.65;color:var(--gray)}
+.post .list li + li{margin-top:4px}
+.post .list li::before{content:"";position:absolute;left:0;top:.8em;width:7px;height:1px;background:var(--ink)}
+/* Personas (Estudio): retrato redondo, nombre y texto, dos columnas */
+.post__people{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px}
+.post__people img{width:150px;height:150px;border-radius:50%;object-fit:cover}
+.post__people h3{margin-top:18px}
+.post__people p{margin-top:8px;font-size:15px}
+.post__cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.post__cols h3{margin-top:18px}
+.post__cols .list li{font-size:15px}
+.post__pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0 8px}
+.post__pair .post__fig{margin:0}
+.post__pair img{aspect-ratio:3/4;object-fit:cover}
+.post__info{margin-top:22px!important;font:500 11px/1.5 Roboto,sans-serif!important;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
+/* Nota destacada dentro del artículo (antes, el bloque oscuro del collage) */
+.post__note{margin:40px 0;padding:4px 0 4px 24px;border-left:3px solid var(--ink)}
+.post__note-title{margin:0!important;font:400 22px/1.45 Oswald,"Arial Narrow",sans-serif!important;color:var(--ink)!important}
+.post__note ul{list-style:none;margin-top:12px}
+.post__note li{font-size:15px;line-height:1.6;color:var(--gray)}
+.post__note li + li{margin-top:4px}
+.post .link-more{margin-top:44px;clear:both}
+
 /* ---------- Pie ---------- */
-.site-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #e2e3e3;margin-top:8px;padding-top:22px;
+.site-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--soft);margin-top:8px;padding-top:22px;
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 /* ---------- Tablet y móvil ---------- */
@@ -148,7 +192,14 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   .logo{width:96px}
   .nav a{font-size:22px}
   .card--square .card__img{margin-left:0}
+  .post{margin-left:0}
+  .post__title{font-size:32px}
+  .post__fig.side{float:none;width:80%;margin:24px auto 8px}
+  .post__pair{gap:12px}
+  .post__people,.post__cols{grid-template-columns:1fr;gap:28px}
+  .post__fig.tall{width:100%}
 }
+@media (min-width:641px) and (max-width:1060px){ .post{margin-left:0} }
 /* En pantallas táctiles no hay cursor: la pestaña de categoría queda visible */
 @media (hover:none){
   .meta{position:static;opacity:1;transform:none;padding-bottom:10px}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escala de grises para documentación arquitectónica · ANDIRA Arquitectura</title>
+<meta name="description" content="Cómo construir una escala de grises para documentación arquitectónica con una progresión tonal pareja, usando la claridad L* de CIELAB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="page">
+<!-- Página de artículo: sin collage; encabezado arriba y texto en una columna. -->
+
+  <!-- Encabezado: va siempre arriba a la izquierda. El logo lleva al inicio. -->
+  <header class="site-header" data-fixed>
+    <a class="logo" href="index.html" aria-label="ANDIRA Arquitectura, inicio"><img src="img/logo-andira.png" alt="ANDIRA Arquitectura" width="999" height="1365"></a>
+    <div>
+      <ul class="nav">
+        <li><a href="#">Proyectos</a></li>
+        <li><a href="#">Acústica</a></li>
+        <li><a href="estudio.html">Estudio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <ul class="social">
+        <li><a href="https://www.instagram.com/andiraarquitectura/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-2.7 0-3 0-4 .1C3.6 2.5 2.5 4.8 2.3 8c-.1 1-.1 1.3-.1 4s0 3 .1 4c.2 3.2 1.3 5.5 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.2-.2 5.5-1.3 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4c-.2-3.2-1.3-5.5-5.7-5.7-1-.1-1.3-.1-4-.1zm0 1.8c2.6 0 2.9 0 4 .1 2.4.1 3.6 1.3 3.7 3.7.1 1 .1 1.3.1 3.9s0 2.9-.1 3.9c-.1 2.4-1.3 3.6-3.7 3.7-1 .1-1.4.1-4 .1s-2.9 0-3.9-.1c-2.5-.1-3.6-1.3-3.7-3.7-.1-1-.1-1.3-.1-3.9s0-2.9.1-3.9C4.5 5.4 5.6 4.2 8.1 4.1 9 4 9.4 4 12 4z"/></svg></a></li>
+        <li><a href="https://www.facebook.com/andiraarquitectura/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4v3.2h2.8V22h3.3z"/></svg></a></li>
+        <li><a href="https://wa.me/50683172781" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z"/></svg></a></li>
+      </ul>
+    </div>
+  </header>
+
+<!-- Artículo: texto EXACTO de «escala de grises.pdf» (Mauren lo trabajó; no editar la redacción). Imágenes de Mauren. -->
+<article class="post">
+  <div class="post__meta"><span class="cat">Recurso</span><span class="date">Documentación arquitectónica</span></div>
+  <h1 class="post__title">Escala de grises para documentación arquitectónica</h1>
+
+  <p class="post__lead">La estandarización de una escala de grises permite mantener criterios gráficos consistentes entre planos, proyectos y plataformas de trabajo. Sin embargo, su construcción presenta una dificultad: una secuencia de valores numéricos regulares no necesariamente produce una transición visual uniforme.</p>
+  <p>Al organizar muestras de claro a oscuro, pueden aparecer tonos apenas distinguibles entre sí y otros separados por cambios de claridad excesivos. Comprender esta diferencia entre representación numérica y percepción visual permite establecer un criterio más adecuado para desarrollar y documentar una paleta.</p>
+
+  <figure class="post__fig wide">
+    <img src="img/escala-grises.png" alt="Escala de quince grises, del blanco al negro" width="1400" height="486">
+  </figure>
+
+  <h2>El problema de la progresión tonal</h2>
+  <p>Una forma habitual de construir una escala consiste en distribuir valores RGB o porcentajes de negro mediante incrementos constantes. Aunque este procedimiento genera una secuencia matemáticamente ordenada, no garantiza que todos los intervalos se perciban de la misma manera.</p>
+  <p>La dificultad también aparece cuando se reúnen grises seleccionados individualmente por su desempeño en distintos planos. Cada tono puede resultar apropiado para una necesidad particular, pero el conjunto puede presentar separaciones desiguales. Incorporar o sustituir una muestra obliga, entonces, a revisar su relación con las demás.</p>
+  <p>El objetivo de la estandarización es disponer de una selección reproducible y de una progresión tonal coherente. Para ello, es necesario distinguir entre los valores que describen un color y la claridad con la que se percibe.</p>
+
+  <h2>Representación del color y percepción visual</h2>
+  <p>RGB describe el color mediante componentes de luz roja, verde y azul. CMYK lo representa mediante proporciones de tintas cian, magenta, amarilla y negra. Ambos modelos permiten especificar colores para determinados medios, pero sus intervalos numéricos no constituyen medidas uniformes de diferencia perceptual.</p>
+  <p>El sistema visual humano responde de forma no lineal a la luminancia. Por esta razón, una variación constante en los valores de una escala puede producir cambios aparentes de distinta magnitud. En impresión, también intervienen las características del papel, las tintas y las condiciones de reproducción.</p>
+  <p>La apariencia depende, además, del contexto. Un mismo gris puede percibirse de manera diferente según el fondo, los tonos adyacentes y la superficie que ocupa. Por ello, la evaluación de una paleta debe considerar tanto la secuencia de muestras como su comportamiento dentro de la documentación.</p>
+
+  <h2>La claridad en el espacio CIELAB</h2>
+  <p>El espacio de color CIELAB, también denominado Lab, incorpora una coordenada de claridad, L*, diseñada para aproximar diferencias perceptuales uniformes. Las coordenadas a* y b* describen las componentes cromáticas en las direcciones verde–rojo y azul–amarillo.</p>
+  <p>En una escala neutral, a* y b* se mantienen en cero y se modifica L*. Distribuir las muestras mediante intervalos de esta coordenada permite aproximar una progresión en la que los cambios de claridad se perciban más equilibrados.</p>
+  <p>Al convertir esos colores a RGB, las diferencias numéricas entre muestras pueden variar. Esto responde a la traducción entre espacios de color: una secuencia organizada según la claridad perceptual no tiene por qué conservar incrementos constantes en los canales rojo, verde y azul.</p>
+
+  <h2>Desarrollo de la escala</h2>
+  <p>La escala presentada se desarrolló como parte de un proceso de estandarización gráfica para documentación arquitectónica. Su elaboración incluyó la revisión de versiones anteriores, la selección de la cantidad de niveles y la comparación de las transiciones entre tonos.</p>
+  <p>El conocimiento del espacio CIELAB y de su componente L* aportó un criterio para evaluar la claridad de las muestras y revisar las discontinuidades percibidas en las primeras versiones. La secuencia final se trabajó en Adobe Illustrator y se documenta mediante los valores RGB que muestra la aplicación.</p>
+  <p>La paleta se comparte como un recurso de consulta y uso. Su propósito es facilitar el acceso a una selección definida de tonos, sin establecer asignaciones obligatorias para elementos o categorías del plano. La aplicación de cada gris corresponde al criterio gráfico de cada profesional.</p>
+
+  <h2>Valores RGB y hexadecimales</h2>
+  <figure class="post__fig side">
+    <img src="img/escala-grises-valores.png" alt="Tabla de la escala: quince muestras con sus valores RGB y hexadecimales, de #FFFFFF a #000000" width="550" height="1458">
+  </figure>
+  <p>La siguiente tabla presenta la escala ordenada de claro a oscuro. Los canales R, G y B se registran por separado para facilitar su introducción directa en aplicaciones como Revit. El código hexadecimal expresa esos mismos valores mediante una notación alternativa, utilizada en herramientas gráficas y entornos web.</p>
+  <p>Mantener este registro permite incorporar nuevamente los colores cuando una paleta personalizada no está disponible o al trabajar entre distintas versiones del software.</p>
+
+  <h2>Condiciones de reproducción</h2>
+  <p>Los valores documentados permiten reproducir la configuración de los colores, aunque su apariencia puede variar entre pantallas y sistemas de impresión. Las conversiones entre RGB y CMYK, los perfiles de color y las condiciones de salida influyen en el resultado.</p>
+  <p>Por ello, la escala debe verificarse en los medios donde se utilizará la documentación. Su registro constituye una base común para mantener la consistencia gráfica y realizar ajustes de reproducción cuando sean necesarios.</p>
+
+  <a class="link-more back" href="index.html"><i>←</i> Inicio</a>
+</article>
+<footer class="site-footer"><span>© 2026 ANDIRA Arquitectura</span><span>Cartago · Costa Rica</span></footer>
+</div>
+</body>
+</html>

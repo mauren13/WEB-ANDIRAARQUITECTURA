@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="page">
-<main class="grid" id="grid">
+<!-- Encabezado sin collage. -->
 
   <!-- Encabezado: va siempre arriba a la izquierda. El logo lleva al inicio. -->
   <header class="site-header" data-fixed>
@@ -32,102 +32,46 @@
     </div>
   </header>
 
-  <!-- Proyecto: solo render exterior; del resultado final, únicamente interiores. -->
+<!-- Página de proyecto en formato artículo: una columna, imágenes dentro del texto. -->
+<article class="post">
+  <div class="post__meta"><span class="cat">Residencial</span><span class="date">Naranjo</span></div>
+  <h1 class="post__title">Una casa en el paraíso</h1>
 
-  <article class="card card--text">
-    <div class="meta"><span class="cat">Residencial</span><span class="date">Naranjo</span></div>
-    <div class="inner">
-      <h1 class="card__title">Una casa en el paraíso</h1>
-      <p>En el diseño de esta casa de retiro para una pareja adulta con muchos nietos se consideró el entorno natural y el paisajismo tradicional de un lote de varias hectáreas. La idea principal fue incorporar la casa al lote para crear un espacio de descanso y de esparcimiento donde recibir a la familia.</p>
-      <p>Las áreas comunes son amplias, para disfrutar del paisaje y de la tranquilidad del lote. La sala tiene grandes ventanales hacia el paisaje, y varias terrazas permiten estar al aire libre.</p>
-      <p>Los dormitorios, cada uno con baño propio, se ubicaron en áreas separadas para dar privacidad a la pareja y a sus nietos. Se usaron materiales naturales y técnicas constructivas de la región.</p>
-      <span class="label">Llano Bonito de Naranjo · Diseño conceptual y planos constructivos</span>
-      <a class="link-more back" href="index.html"><i>←</i> Inicio</a>
-    </div>
-  </article>
+  <p class="post__lead">En el diseño de esta casa de retiro para una pareja adulta con muchos nietos se consideró el entorno natural y el paisajismo tradicional de un lote de varias hectáreas. La idea principal fue incorporar la casa al lote para crear un espacio de descanso y de esparcimiento donde recibir a la familia.</p>
 
-  <article class="card card--wide">
-    <div class="meta"><span class="cat">Render</span><span class="date">Exterior</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:15/8"><img src="img/paraiso-render.jpg" alt="Render exterior: la casa sobre la pendiente, con techos a varias aguas y terrazas"></figure>
-      <div class="card__body"><span class="label">Render exterior</span></div>
-    </div>
-  </article>
+  <figure class="post__fig"><img src="img/paraiso-render.jpg" alt="Render exterior: la casa sobre la pendiente, con techos a varias aguas y terrazas" width="1800" height="969"><figcaption>Render exterior</figcaption></figure>
 
-  <article class="card card--top">
-    <div class="meta"><span class="cat">Render</span><span class="date">Sala</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/2"><img src="img/paraiso-render-estar.jpg" alt="Render de la sala de doble altura con cerchas de madera oscura"></figure>
-      <div class="card__body"><span class="label">Render · sala de doble altura</span></div>
-    </div>
-  </article>
+  <p>Las áreas comunes son amplias, para disfrutar del paisaje y de la tranquilidad del lote. La sala tiene grandes ventanales hacia el paisaje, y varias terrazas permiten estar al aire libre.</p>
+  <p>Los dormitorios, cada uno con baño propio, se ubicaron en áreas separadas para dar privacidad a la pareja y a sus nietos. Se usaron materiales naturales y técnicas constructivas de la región.</p>
+  <p class="post__info">Llano Bonito de Naranjo · Diseño conceptual y planos constructivos</p>
 
-  <article class="card card--square">
-    <div class="meta"><span class="cat">Interior</span><span class="date">Sala</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/4"><img src="img/paraiso-sala.jpg" alt="Sala terminada con vigas oscuras, piso de madera y ventanales"></figure>
-      <div class="card__body"><span class="label">Sala</span></div>
-    </div>
-  </article>
+  <figure class="post__fig"><img src="img/paraiso-render-estar.jpg" alt="Render de la sala de doble altura con cerchas de madera oscura" width="1107" height="769"><figcaption>Render · sala de doble altura</figcaption></figure>
 
-  <article class="card card--top">
-    <div class="meta"><span class="cat">Render</span><span class="date">Cocina</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:7/8"><img src="img/paraiso-render-cocina.jpg" alt="Render de la cocina con isla"></figure>
-      <div class="card__body"><span class="label">Render · cocina</span></div>
-    </div>
-  </article>
+  <div class="post__pair">
+    <figure class="post__fig"><img src="img/paraiso-sala.jpg" alt="Sala terminada con vigas oscuras, piso de madera y ventanales" width="1050" height="1400"><figcaption>Sala</figcaption></figure>
+    <figure class="post__fig"><img src="img/paraiso-render-cocina.jpg" alt="Render de la cocina con isla" width="670" height="769"><figcaption>Render · cocina</figcaption></figure>
+  </div>
 
-  <article class="card card--dark">
-    <div class="meta"><span class="cat">Materiales</span><span class="date">Región</span></div>
-    <div class="inner">
-      <p class="card__title">Tablilla de madera, cerchas a la vista y pisos de madera: materiales naturales y técnicas constructivas de la región.</p>
-    </div>
-  </article>
+  <aside class="post__note">
+    <p class="post__note-title">Tablilla de madera, cerchas a la vista y pisos de madera: materiales naturales y técnicas constructivas de la región.</p>
+  </aside>
 
-  <article class="card card--square">
-    <div class="meta"><span class="cat">Interior</span><span class="date">Comedor</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/4"><img src="img/paraiso-comedor.jpg" alt="Comedor con ventana corrida hacia el jardín"></figure>
-      <div class="card__body"><span class="label">Comedor</span></div>
-    </div>
-  </article>
+  <div class="post__pair">
+    <figure class="post__fig"><img src="img/paraiso-comedor.jpg" alt="Comedor con ventana corrida hacia el jardín" width="1050" height="1400"><figcaption>Comedor</figcaption></figure>
+    <figure class="post__fig"><img src="img/paraiso-estar.jpg" alt="Estar con vista hacia la cocina bajo las cerchas" width="960" height="1280"><figcaption>Estar y cocina</figcaption></figure>
+  </div>
 
-  <article class="card card--top">
-    <div class="meta"><span class="cat">Interior</span><span class="date">Estar</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/4"><img src="img/paraiso-estar.jpg" alt="Estar con vista hacia la cocina bajo las cerchas"></figure>
-      <div class="card__body"><span class="label">Estar y cocina</span></div>
-    </div>
-  </article>
+  <div class="post__pair">
+    <figure class="post__fig"><img src="img/paraiso-cocina.jpg" alt="Barra de la cocina y puerta principal de madera" width="960" height="1280"><figcaption>Cocina y acceso</figcaption></figure>
+    <figure class="post__fig"><img src="img/paraiso-escalera.jpg" alt="Escalera de madera entre paredes de tablilla blanca" width="960" height="1280"><figcaption>Escalera</figcaption></figure>
+  </div>
 
-  <article class="card card--square">
-    <div class="meta"><span class="cat">Interior</span><span class="date">Cocina</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/4"><img src="img/paraiso-cocina.jpg" alt="Barra de la cocina y puerta principal de madera"></figure>
-      <div class="card__body"><span class="label">Cocina y acceso</span></div>
-    </div>
-  </article>
+  <figure class="post__fig tall"><img src="img/paraiso-pasillo.jpg" alt="Baranda de madera en el segundo nivel" width="960" height="1280"><figcaption>Segundo nivel</figcaption></figure>
 
-  <article class="card card--top">
-    <div class="meta"><span class="cat">Interior</span><span class="date">Escalera</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/4"><img src="img/paraiso-escalera.jpg" alt="Escalera de madera entre paredes de tablilla blanca"></figure>
-      <div class="card__body"><span class="label">Escalera</span></div>
-    </div>
-  </article>
+  <a class="link-more back" href="index.html"><i>←</i> Inicio</a>
+</article>
 
-  <article class="card card--square">
-    <div class="meta"><span class="cat">Interior</span><span class="date">Segundo nivel</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:3/4"><img src="img/paraiso-pasillo.jpg" alt="Baranda de madera en el segundo nivel"></figure>
-      <div class="card__body"><span class="label">Segundo nivel</span></div>
-    </div>
-  </article>
-
-</main>
 <footer class="site-footer"><span>© 2026 ANDIRA Arquitectura</span><span>Cartago · Costa Rica</span></footer>
 </div>
-<script src="collage.js"></script>
 </body>
 </html>

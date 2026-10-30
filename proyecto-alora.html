@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="page">
-<main class="grid" id="grid">
+<!-- Encabezado sin collage. -->
 
   <!-- Encabezado: va siempre arriba a la izquierda. El logo lleva al inicio. -->
   <header class="site-header" data-fixed>
@@ -32,50 +32,33 @@
     </div>
   </header>
 
-  <!-- Proyecto: renders y datos de las plantas arquitectónicas (láminas A101 y A102, mayo 2026). -->
+<!-- Página de proyecto en formato artículo: una columna, imágenes dentro del texto. -->
+<article class="post">
+  <div class="post__meta"><span class="cat">Residencial</span><span class="date">2026</span></div>
+  <h1 class="post__title">Alora House</h1>
 
-  <article class="card card--text">
-    <div class="meta"><span class="cat">Residencial</span><span class="date">2026</span></div>
-    <div class="inner">
-      <h1 class="card__title">Alora House</h1>
-      <p>Casa de dos niveles en un lote de 329 m². La sala y el comedor quedan bajo una doble altura, con un ventanal hacia un patio con árboles; desde el segundo nivel, el pasillo se asoma a ese espacio.</p>
-      <p>En el primer nivel están la cocina con isla y alacena, la sala, el comedor, una oficina que también puede funcionar como dormitorio, bodega, pilas y cochera. En el segundo, el dormitorio principal, un dormitorio secundario, un área de cowork y dos terrazas.</p>
-      <span class="label">Diseño arquitectónico · 2026</span>
-      <a class="link-more back" href="index.html"><i>←</i> Inicio</a>
-    </div>
-  </article>
+  <p class="post__lead">Casa de dos niveles en un lote de 329 m². La sala y el comedor quedan bajo una doble altura, con un ventanal hacia un patio con árboles; desde el segundo nivel, el pasillo se asoma a ese espacio.</p>
 
-  <article class="card card--wide">
-    <div class="meta"><span class="cat">Render</span><span class="date">Exterior</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:4/3"><img src="img/alora-exterior.jpg" alt="Render exterior nocturno de Alora House: volúmenes blancos, muro de piedra y cochera con alero"></figure>
-      <div class="card__body"><span class="label">Render exterior</span></div>
-    </div>
-  </article>
+  <figure class="post__fig"><img src="img/alora-exterior.jpg" alt="Render exterior nocturno de Alora House: volúmenes blancos, muro de piedra y cochera con alero" width="1448" height="1086"><figcaption>Render exterior</figcaption></figure>
 
-  <article class="card card--top">
-    <div class="meta"><span class="cat">Render</span><span class="date">Interior</span></div>
-    <div class="inner">
-      <figure class="card__img" style="--r:13/10"><img src="img/alora-interior.jpg" alt="Render interior: sala y comedor en doble altura, ventanal hacia el patio y cocina con isla"></figure>
-      <div class="card__body"><span class="label">Render · sala, comedor y cocina</span></div>
-    </div>
-  </article>
+  <p>En el primer nivel están la cocina con isla y alacena, la sala, el comedor, una oficina que también puede funcionar como dormitorio, bodega, pilas y cochera. En el segundo, el dormitorio principal, un dormitorio secundario, un área de cowork y dos terrazas.</p>
+  <p class="post__info">Diseño arquitectónico · 2026</p>
 
-  <article class="card card--dark">
-    <div class="meta"><span class="cat">Áreas</span><span class="date">Plantas</span></div>
-    <div class="inner">
-      <p class="card__title">Doble altura de 32 m² sobre la sala y el comedor.</p>
-      <ul class="facts">
-        <li>Lote: 328,73 m².</li>
-        <li>Cobertura: 209,78 m² (63,8 %).</li>
-        <li>Dos dormitorios, oficina, cowork y dos terrazas.</li>
-      </ul>
-    </div>
-  </article>
+  <figure class="post__fig"><img src="img/alora-interior.jpg" alt="Render interior: sala y comedor en doble altura, ventanal hacia el patio y cocina con isla" width="1429" height="1101"><figcaption>Render · sala, comedor y cocina</figcaption></figure>
 
-</main>
+  <aside class="post__note">
+    <p class="post__note-title">Doble altura de 32 m² sobre la sala y el comedor.</p>
+    <ul>
+      <li>Lote: 328,73 m².</li>
+      <li>Cobertura: 209,78 m² (63,8 %).</li>
+      <li>Dos dormitorios, oficina, cowork y dos terrazas.</li>
+    </ul>
+  </aside>
+
+  <a class="link-more back" href="index.html"><i>←</i> Inicio</a>
+</article>
+
 <footer class="site-footer"><span>© 2026 ANDIRA Arquitectura</span><span>Cartago · Costa Rica</span></footer>
 </div>
-<script src="collage.js"></script>
 </body>
 </html>
