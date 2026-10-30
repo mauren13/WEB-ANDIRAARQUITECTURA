@@ -3,7 +3,7 @@
 
 /* ---------- Colores y medidas (cambiar aquí) ---------- */
 :root{
-  --accent:#E6007E;      /* FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima #171617),
+  --accent:#565C80;      /* VERSIÓN AZUL para Stephanie. FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima #171617),
                             azul ANDIRA #565C80 (NCS S 5030-R70B), amarillo original de Patch #ffde00 */
   --on-accent:#ffffff;   /* texto sobre el color de énfasis */
   --soft:#D2D9D8;        /* gris claro ANDIRA (NCS S 1005-B20G) */
