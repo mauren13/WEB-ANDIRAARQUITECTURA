@@ -3,7 +3,7 @@
 
 /* ---------- Colores y medidas (cambiar aquí) ---------- */
 :root{
-  --accent:#DC4141;      /* Prueba: coral RGB 220, 65, 65 (#DC4141). Azul ANDIRA #565C80 (a Steph no le gustó: se siente vacío). FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima oscuro),
+  --accent:#E6007E;      /* DEFINITIVO: fucsia #E6007E (decisión de Mauren, 2026-10-30). Probados y descartados: flor de Andira inermis (almendro de montaña), de donde nace el nombre ANDIRA: #E33276 (CMYK 3/90/21/0). Coral probado: #DC4141. Azul ANDIRA #565C80 (a Steph no le gustó: se siente vacío). FUCSIA FAVORITO DE MAUREN: #E6007E (no perder). Variante para Stephanie: azul ANDIRA #565C80. Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima oscuro),
                             azul ANDIRA #565C80 (NCS S 5030-R70B), amarillo original de Patch #ffde00 */
   --on-accent:#FFFFFF;   /* texto sobre el color de énfasis */
   /* Escala de grises ANDIRA (escala-grises.html), de claro a oscuro. Se usa toda MENOS el negro puro #000000. */
