@@ -1,0 +1,163 @@
+/* ANDIRA Arquitectura · estilos comunes a todas las páginas
+   Tipografía, espaciado y movimientos medidos sobre el tema Patch. */
+
+/* ---------- Colores y medidas (cambiar aquí) ---------- */
+:root{
+  --accent:#E6007E;      /* fucsia (prueba). Otras opciones probadas: morado #800080 (no gustó), celeste #8DB3C7 (texto encima #171617),
+                            azul ANDIRA #565C80 (NCS S 5030-R70B), amarillo original de Patch #ffde00 */
+  --on-accent:#ffffff;   /* texto sobre el color de énfasis */
+  --soft:#D2D9D8;        /* gris claro ANDIRA (NCS S 1005-B20G) */
+  --ink:#171617;
+  --gray:#2a2c29;
+  --muted:#8a8b8c;
+  --paper:#ffffff;
+  /* Medidas tomadas de Patch */
+  --gutter:24px;         /* espacio entre columnas */
+  --indent:48px;         /* sangría del texto respecto al borde de la imagen */
+  --bleed:48px;          /* lo que la imagen lateral sobresale de la columna */
+  --beside:12px;         /* espacio entre imagen lateral y el texto */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--gray);font:300 16px/1.6 Roboto,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Marco general ---------- */
+.page{max-width:1360px;margin:0 auto;padding:56px 64px 40px}
+.grid{display:flex;gap:var(--gutter);align-items:flex-start}
+.col{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+.col:nth-child(3){padding-top:80px}
+
+/* ---------- Encabezado: logo a la izquierda, menú a la derecha ---------- */
+.site-header{display:flex;align-items:flex-start;gap:44px;padding:4px 0 80px}
+.logo{display:block;flex:0 0 auto;width:112px}
+.logo img{height:auto;object-fit:contain}
+.nav{list-style:none;padding-top:2px}
+.nav a{font:300 24px/1.42 Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+  background:linear-gradient(var(--accent),var(--accent)) left 92%/0 4px no-repeat;padding-bottom:3px;transition:background-size .35s var(--ease)}
+.nav a:hover,.nav a[aria-current]{background-size:100% 4px}
+.social{display:flex;gap:18px;margin-top:22px;list-style:none}
+.social a{display:block;width:16px;height:16px;color:var(--ink);transition:color .25s,transform .25s var(--ease)}
+.social a:hover{color:var(--accent);transform:translateY(-2px)}
+.social svg{width:100%;height:100%;fill:currentColor}
+
+/* ---------- Tarjeta base ---------- */
+.card{position:relative;margin-bottom:44px;opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.card.is-in{opacity:1;transform:none}
+.card.drop{margin-top:24px}
+.card.no-bleed{--bleed:0px}
+.card__link{display:block}
+
+/* Pestaña superior: categoría + lugar o año */
+.meta{position:absolute;left:var(--indent);bottom:100%;padding-bottom:9px;display:flex;align-items:center;gap:10px;white-space:nowrap;
+  opacity:0;transform:translateY(26px);transition:opacity .3s var(--ease),transform .45s var(--ease);pointer-events:none;z-index:0}
+.card:hover .meta,.card:focus-within .meta{opacity:1;transform:none}
+.meta .cat{background:var(--accent);color:var(--on-accent);font:500 11px/1 Roboto,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:5px 7px 4px}
+.meta .date{font:400 11px/1 Roboto,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.card--side .meta,.card--dark .meta,.card--overlap .meta{left:0}
+.card--side.right .meta{left:auto;right:0}
+
+/* Como en Patch: al pasar el cursor la publicación baja 15 px y la pestaña sale desde atrás de la imagen */
+.card > .card__link,.card > .inner{position:relative;z-index:1;transition:transform .45s var(--ease)}
+.card:hover > .card__link,.card:hover > .inner,.card:focus-within > .card__link{transform:translateY(15px)}
+
+/* Imagen: en blanco y negro; al pasar el cursor toma color y aparece "Ver" */
+.card__img{position:relative;overflow:hidden;aspect-ratio:var(--r,4/3);background:var(--soft);z-index:1}
+.card__img img{filter:grayscale(1);transition:filter .6s var(--ease)}
+.card__img::after{content:"";position:absolute;inset:0;background:rgba(23,22,23,.22);opacity:0;transition:opacity .45s var(--ease)}
+.more{position:absolute;left:50%;top:50%;z-index:1;color:#fff;font:500 26px/1 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
+  opacity:0;transform:translate(-50%,calc(-50% + 8px));transition:opacity .35s var(--ease),transform .45s var(--ease)}
+.card:hover .card__img img,.card:focus-within .card__img img{filter:grayscale(0)}
+.card:hover .card__img::after{opacity:1}
+.card:hover .more{opacity:1;transform:translate(-50%,-50%)}
+
+/* Texto (medidas de Patch), sin justificar */
+.card__title{font:400 26px/1.45 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.card__body{padding:9px 0 0 var(--indent)}
+.card p,.card li{font-size:14px;line-height:1.5;color:var(--gray)}
+.card__body p{margin-top:8px}
+.link-more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:400 13px/1 Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.link-more i{font-style:normal;transition:transform .35s var(--ease)}
+.card:hover .link-more i{transform:translateX(5px)}
+
+/* Cuadrada: imagen y texto con la misma sangría */
+.card--square .card__img{margin-left:var(--indent)}
+/* Ancha: imagen que sobresale hacia la derecha */
+.card--wide .card__img{margin-right:calc(var(--bleed) * -1)}
+
+/* Lateral: imagen al costado; el texto llega justo hasta el borde inferior de la imagen
+   (si es más largo se corta con "…", si es más corto la imagen se acorta) */
+.card--side .card__link{display:grid;grid-template-columns:minmax(0,1fr) 55%;column-gap:var(--beside);align-items:start}
+.card--side.tall .card__link{grid-template-columns:minmax(0,1fr) 45%}
+.card--side .card__img{grid-column:2;grid-row:1;margin-right:calc(var(--bleed) * -1)}
+.card--side .card__body{grid-column:1;grid-row:1;padding:0;overflow:hidden}
+.card--side .card__body{text-align:right}
+.card--side .card__title{font-size:30px;line-height:1.27}
+.card--side.right .card__link{grid-template-columns:55% minmax(0,1fr)}
+.card--side.right.tall .card__link{grid-template-columns:45% minmax(0,1fr)}
+.card--side.right .card__img{grid-column:1;margin-right:0;margin-left:calc(var(--bleed) * -1)}
+.card--side.right .card__body{grid-column:2}
+.card--side.right .card__body{text-align:left}
+
+/* Retrato redondo (página Estudio) */
+.card--portrait .card__img{border-radius:50%;width:calc(100% - var(--indent) * 2);margin-left:var(--indent)}
+
+/* Caja oscura montada sobre la imagen */
+.card--overlap .box{position:relative;z-index:2;background:var(--ink);margin:-64px calc(var(--bleed) * -1) 0 var(--indent);padding:14px 20px 16px}
+.card--overlap .box .card__title{color:#fff;font-size:30px;line-height:1.27}
+.card--overlap .card__body{padding-top:12px}
+
+/* Solo texto, fondo oscuro */
+.card--dark .inner{display:block;background:var(--ink);padding:28px 28px 26px}
+.card--dark .card__title{color:#fff;font-size:24px;line-height:1.55;font-weight:500;letter-spacing:0}
+.card--dark .facts{margin-top:14px;list-style:none}
+.card--dark .facts li,.card--dark p.small{color:var(--soft)}
+.card--dark .facts li + li{margin-top:6px}
+.card--dark cite{display:block;margin-top:18px;font:500 15px/1 Oswald,sans-serif;text-transform:uppercase;font-style:normal;color:var(--soft)}
+.card--dark .contact{margin-top:12px;line-height:1.7;color:var(--soft);text-align:left}
+.card--dark .contact a{border-bottom:1px solid rgba(210,217,216,.35);transition:border-color .25s}
+.card--dark .contact a:hover{border-color:var(--soft)}
+
+/* Solo texto, título grande */
+.card--text .card__body{padding-top:0}
+.card--text .card__title{font-size:30px;line-height:1.33}
+.card--text .inner{padding-left:var(--indent)}
+.card--text.tint .inner{background:var(--soft);padding:24px 24px 22px var(--indent)}
+.card--text .inner p{margin-top:10px}
+.card .list{list-style:none;margin-top:12px}
+.card .list li{padding-left:14px;position:relative}
+.card .list li + li{margin-top:4px}
+.card .list li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:1px;background:var(--ink)}
+.label{display:block;margin-top:18px;font:500 11px/1 Roboto,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card__body > .label:first-child{margin-top:4px}
+.link-more.back:hover i,.card:hover .link-more.back i{transform:translateX(-5px)}
+
+/* ---------- Pie ---------- */
+.site-footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #e2e3e3;margin-top:8px;padding-top:22px;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- Tablet y móvil ---------- */
+@media (max-width:1060px){ .page{padding:40px 56px} .col:nth-child(3){padding-top:0} .col:nth-child(2){padding-top:64px} }
+@media (max-width:640px){
+  :root{--bleed:0px;--indent:24px}
+  .page{padding:28px 16px}
+  .col:nth-child(2){padding-top:0}
+  .site-header{padding-bottom:56px;gap:32px}
+  .logo{width:96px}
+  .nav a{font-size:22px}
+  .card--square .card__img{margin-left:0}
+}
+/* En pantallas táctiles no hay cursor: la pestaña de categoría queda visible */
+@media (hover:none){
+  .meta{position:static;opacity:1;transform:none;padding-bottom:10px}
+  .card--side.right .meta{justify-content:flex-end}
+  .card:hover > .card__link,.card:hover > .inner{transform:none}
+  .card__img img{filter:none}
+}
+/* Quien prefiere menos movimiento no ve animaciones */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important}
+  .card{opacity:1;transform:none}
+}
