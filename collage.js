@@ -47,6 +47,8 @@
     var n = columnsFor(grid.clientWidth || window.innerWidth);
     if (n === current && !force) return;
     current = n;
+    // Vaciar el collage acorta la página un instante: se guarda la posición para no saltar hacia arriba.
+    var y = window.pageYOffset;
     grid.innerHTML = '';
     var cols = [];
     for (var i = 0; i < n; i++){ var c = document.createElement('div'); c.className = 'col'; grid.appendChild(c); cols.push(c); }
@@ -59,6 +61,7 @@
       if (el.classList.contains('card--side')) fitSide(el);
     });
     fixBleed();
+    window.scrollTo(0, y);
   }
 
   // Si una imagen que sobresale de su columna cae encima de otra publicación, se queda dentro de su columna.
@@ -80,7 +83,13 @@
   layout(true);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ layout(true); });
   window.addEventListener('load', function(){ layout(true); });
-  var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(function(){ layout(true); }, 150); });
+  // En el teléfono la barra del navegador cambia el alto al bajar: solo se reacomoda si cambia el ancho.
+  var t, lastW = window.innerWidth;
+  window.addEventListener('resize', function(){
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(t); t = setTimeout(function(){ layout(true); }, 150);
+  });
 
   // Entrada suave: las tarjetas aparecen al llegar a la vista, una tras otra.
   var cards = grid.querySelectorAll('.card');
