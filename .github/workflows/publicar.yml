@@ -1,0 +1,46 @@
+name: Publicar Andira
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - 'img/**'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: publicar-andira
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Actualizar sitio por SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$SSH_PRIVATE_KEY"
+          test -n "$SSH_KNOWN_HOSTS"
+
+          install -d -m 700 ~/.ssh
+          trap 'rm -f ~/.ssh/andira' EXIT
+
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/andira
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/andira ~/.ssh/known_hosts
+
+          ssh -T -i ~/.ssh/andira -p 22 \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=20 \
+            deploy-andira@andiraarquitectura.com actualizar
