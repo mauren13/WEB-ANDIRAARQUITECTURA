@@ -9,13 +9,16 @@
   if (!root.classList.contains('intro')) return;
   try { sessionStorage.setItem('andira-intro', '1'); } catch (e) {}
 
-  var HOLD = 500;      // ms con el logo quieto al centro
-  var MOVE = 700;      // ms del viaje (igual a la transición en estilos.css)
+  // Tiempos en ms; las duraciones de cada transición están en estilos.css (sección 8).
+  var BLANK = 400;     // página en blanco antes de que aparezca el logo
+  var ENTER = 600;     // el logo aparece y sube a su lugar en el centro
+  var HOLD = 700;      // pausa con el logo quieto
+  var MOVE = 1400;     // viaje a la esquina
 
   function done(){
     var veil = document.querySelector('.intro-veil');
     if (veil) veil.remove();
-    root.classList.remove('intro', 'intro--out');
+    root.classList.remove('intro', 'intro--in', 'intro--out');
   }
 
   var logo = document.querySelector('.site-header .logo img');
@@ -35,13 +38,19 @@
   copy.src = logo.currentSrc || logo.src;
   copy.alt = '';
   copy.style.width = end.width + 'px';
-  copy.style.transform = 'translate(' + x0 + 'px,' + y0 + 'px) scale(' + scale + ')';
+  copy.style.transform = 'translate(' + x0 + 'px,' + (y0 + 20) + 'px) scale(' + scale + ')';
   veil.appendChild(copy);
   document.body.appendChild(veil);
+  copy.getBoundingClientRect();   // fija la posición inicial antes de animar
+
+  setTimeout(function(){
+    root.classList.add('intro--in');
+    copy.style.transform = 'translate(' + x0 + 'px,' + y0 + 'px) scale(' + scale + ')';
+  }, BLANK);
 
   setTimeout(function(){
     root.classList.add('intro--out');
     copy.style.transform = 'translate(' + end.left + 'px,' + end.top + 'px) scale(1)';
-    setTimeout(done, MOVE + 50);
-  }, HOLD);
+    setTimeout(done, MOVE + 100);
+  }, BLANK + ENTER + HOLD);
 })();
