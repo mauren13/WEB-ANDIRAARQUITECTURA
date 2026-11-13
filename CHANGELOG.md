@@ -1,5 +1,23 @@
 # Registro de versiones
 
+## v5 · 2026-11-13
+Gráfica editorial
+- Tipografía Inter Tight en lugar de Oswald y Roboto. Proporciones tomadas de una referencia editorial: título de 33 px, texto de 16,4 / 21,7 px y etiquetas de 9,6 px.
+- Artículos con columna de texto de 525 px e imágenes de 861 px. La categoría va sobre el título y el autor y la fecha, debajo.
+- Bloques de solo texto y franjas sobre las imágenes sin fondo negro.
+- Líneas de 1 px (tono 2 de la escala) entre columnas y tarjetas del collage, con 40 px de aire. Con el cursor encima, la pestaña de categoría queda a la misma distancia de su línea que la tarjeta de la suya.
+
+Contenido
+- Páginas para la sucursal de Cartago, la sucursal de Heredia, Casa El Abanico, Casa El Farolito, ¿Jardín o sala de espera?, Oficinas en Alajuela y la oficina de TI.
+
+Correcciones
+- Las tarjetas sin página ya no enlazan a `#`, que llevaba al inicio.
+- En el teléfono, el collage ya no se rearma al ocultarse la barra del navegador, que hacía saltar la página hacia arriba.
+
+Código
+- CSS y JS en `css/` y `js/`. `estilos.css` reorganizado por secciones, con variables y sin `!important`.
+- Sin estilos en línea ni comentarios internos en el HTML. README con estructura, publicación y convenciones.
+
 ## v4 · 2026-10-30
 - Menú: Proyectos, Colaboraciones, Bitácora y Estudio. El contacto pasa al final de Estudio.
 - Páginas de listado para Proyectos, Colaboraciones y Bitácora.

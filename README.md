@@ -1,25 +1,50 @@
 # ANDIRA Arquitectura · sitio web
 
-Sitio de ANDIRA Arquitectura (Cartago, Costa Rica), hecho a mano en HTML, CSS y JavaScript, sin WordPress ni dependencias de compilación. Las tipografías Oswald y Roboto se cargan desde Google Fonts.
+Sitio estático de ANDIRA Arquitectura (Cartago, Costa Rica): HTML, CSS y JavaScript sin dependencias ni paso de compilación. La tipografía Inter Tight se carga desde Google Fonts.
 
-## Cómo verlo
+En línea: <https://andiraarquitectura.com>
 
-Abrir `index.html` en el navegador. No necesita instalación.
+## Estructura
 
-## Qué hay aquí
+```
+├── index.html               Portada (collage)
+├── proyectos.html           Listados en collage
+├── colaboraciones.html
+├── bitacora.html
+├── proyecto-*.html          Páginas de proyecto (formato artículo)
+├── escala-grises.html       Textos de la bitácora (formato artículo)
+├── acustica-ventanas.html
+├── leed.html
+├── estudio.html             Quiénes somos y contacto
+├── contacto.html            Redirige a estudio.html#contacto
+├── css/estilos.css          Todos los estilos (índice al inicio del archivo)
+├── js/collage.js            Reparte las tarjetas del collage en columnas
+├── img/                     Imágenes, nombradas proyecto-vista.jpg
+└── .github/workflows/       Publicación automática
+```
 
-| Archivo o carpeta | Contenido |
-|---|---|
-| `index.html` | Portada en collage |
-| `proyectos.html`, `proyecto-*.html` | Listado de proyectos y sus páginas |
-| `colaboraciones.html`, `acustica-ventanas.html` | Trabajo con otras empresas |
-| `bitacora.html`, `escala-grises.html`, `leed.html` | Textos del estudio |
-| `estudio.html` | Quiénes somos y contacto |
-| `contacto.html` | Redirige al contacto dentro de Estudio |
-| `estilos.css` | Estilos: colores y medidas al inicio del archivo |
-| `collage.js` | Acomoda el collage y las animaciones de entrada |
-| `img/` | Imágenes |
+Las páginas viven en la raíz para que sus URL sean cortas (`/proyecto-cartago.html`).
 
-## Versiones
+## Ver el sitio en local
 
-Cada versión guardada es un commit con su etiqueta (`v1.0` … `v4`). El detalle está en [CHANGELOG.md](CHANGELOG.md).
+Abrir `index.html` en el navegador funciona. Para probar como en el servidor (rutas, caché desactivada), servir la carpeta con cualquier servidor estático, por ejemplo:
+
+```bash
+python -m http.server 8770
+```
+
+## Publicación
+
+Cada `push` a `main` que toque HTML, CSS, JS o imágenes ejecuta `.github/workflows/publicar.yml`, que entra por SSH al servidor y ejecuta `actualizar`. El servidor descarga el repositorio, así que debe poder leerlo: si el repositorio es privado necesita una clave de solo lectura (*deploy key*).
+
+## Convenciones
+
+**CSS.** Un solo archivo, ordenado en secciones numeradas (variables, base, encabezado, pie, collage, tarjetas, artículo, adaptaciones). Colores, tipografía y medidas se cambian en las variables de `:root`; no se usan colores ni medidas sueltas en las reglas. Cada cambio se integra en la regla de su sección, no como bloque al final. Sin `!important`, salvo en la regla de movimiento reducido.
+
+**Clases.** Notación BEM: bloque (`card`, `post`), elemento (`card__title`, `post__fig`) y variante (`card--side`, `card--statement`). `f1` a `f4` asignan el fucsia de cada sección: Proyectos, Colaboraciones, Bitácora y Estudio.
+
+**HTML.** Sin estilos en línea, salvo `--r`, que fija la proporción de cada imagen del collage. Los comentarios indican el origen de los textos; los marcados como «texto original» no se editan.
+
+**Imágenes.** JPG de hasta 1400 px de lado; PNG solo cuando hace falta exactitud de color (escala de grises). Las renderizaciones se recortan para quitar el logo de la esquina.
+
+**Commits.** Uno por cambio, con un título en imperativo que diga qué cambia y un cuerpo que explique por qué. Cada versión publicada se etiqueta (`v1.0` … `v5`) y se resume en [CHANGELOG.md](CHANGELOG.md).
