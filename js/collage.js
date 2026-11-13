@@ -1,4 +1,6 @@
-// ANDIRA Arquitectura · collage común a todas las páginas
+// ANDIRA Arquitectura · collage de la portada y los listados.
+// Reparte las tarjetas de #grid en 1, 2 o 3 columnas según el ancho, cada una en la
+// columna más corta, ajusta las tarjetas laterales y las hace aparecer al llegar a la vista.
 (function(){
   var grid = document.getElementById('grid');
   if (!grid) return;
@@ -60,24 +62,7 @@
       target.appendChild(el);
       if (el.classList.contains('card--side')) fitSide(el);
     });
-    fixBleed();
     window.scrollTo(0, y);
-  }
-
-  // Si una imagen que sobresale de su columna cae encima de otra publicación, se queda dentro de su columna.
-  function fixBleed(){
-    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
-    cards.forEach(function(c){ c.classList.remove('no-bleed'); });
-    var boxes = cards.map(function(c){ return c.getBoundingClientRect(); });
-    cards.forEach(function(c, i){
-      var el = c.querySelector('.card--side .card__img, .card--wide .card__img, .card--overlap .box');
-      if (!el) return;
-      var r = el.getBoundingClientRect();
-      var hit = boxes.some(function(b, j){
-        return j !== i && r.left < b.right - 1 && b.left < r.right - 1 && r.top < b.bottom + 8 && b.top - 8 < r.bottom;
-      });
-      if (hit) c.classList.add('no-bleed');
-    });
   }
 
   layout(true);
