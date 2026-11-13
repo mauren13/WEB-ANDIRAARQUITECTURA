@@ -3,6 +3,7 @@
 // viaja a su lugar en el encabezado mientras aparece el resto. La clase .intro la pone
 // un script en el <head> de index.html (antes de pintar, para evitar un parpadeo) solo
 // si la intro no se vio en esta visita y no está activado «reducir movimiento».
+// Con ?intro en la dirección se repite en cada carga, para revisarla.
 (function(){
   var root = document.documentElement;
   if (!root.classList.contains('intro')) return;

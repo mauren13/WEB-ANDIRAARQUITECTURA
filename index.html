@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilos.css">
-<script>/* Intro de la portada (ver intro.js) */try{if(!sessionStorage.getItem("andira-intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
+<script>/* Intro de la portada (ver intro.js) */try{if((/[?&]intro(&|=|$)/.test(location.search)||!sessionStorage.getItem("andira-intro"))&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
 </head>
 <body>
 <div class="page">
