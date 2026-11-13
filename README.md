@@ -17,13 +17,13 @@ En línea: <https://andiraarquitectura.com>
 ├── leed.html
 ├── estudio.html             Quiénes somos y contacto
 ├── contacto.html            Redirige a estudio.html#contacto
-├── css/estilos.css          Todos los estilos (índice al inicio del archivo)
-├── js/collage.js            Reparte las tarjetas del collage en columnas
+├── estilos.css              Todos los estilos (índice al inicio del archivo)
+├── collage.js               Reparte las tarjetas del collage en columnas
 ├── img/                     Imágenes, nombradas proyecto-vista.jpg
 └── .github/workflows/       Publicación automática
 ```
 
-Las páginas viven en la raíz para que sus URL sean cortas (`/proyecto-cartago.html`).
+Las páginas viven en la raíz para que sus URL sean cortas (`/proyecto-cartago.html`). `estilos.css` y `collage.js` también van en la raíz: el script de publicación del servidor no copia carpetas nuevas (solo `img/`).
 
 ## Ver el sitio en local
 

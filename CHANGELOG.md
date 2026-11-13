@@ -15,7 +15,7 @@ Correcciones
 - En el teléfono, el collage ya no se rearma al ocultarse la barra del navegador, que hacía saltar la página hacia arriba.
 
 Código
-- CSS y JS en `css/` y `js/`. `estilos.css` reorganizado por secciones, con variables y sin `!important`.
+- `estilos.css` reorganizado por secciones, con variables y sin `!important`.
 - Sin estilos en línea ni comentarios internos en el HTML. README con estructura, publicación y convenciones.
 
 ## v4 · 2026-10-30
