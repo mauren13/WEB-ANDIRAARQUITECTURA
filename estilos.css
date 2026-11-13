@@ -26,7 +26,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--gray);font:300 16px/1.6 Roboto,Arial,sans-serif;overflow-x:hidden}
+body{background:var(--paper);color:var(--gray);font:300 16px/1.6 var(--text);overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 
@@ -52,7 +52,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .cat.f2{background:var(--fucsia-2)!important}
 .cat.f3{background:var(--fucsia-3)!important;color:var(--ink)!important}
 .cat.f4{background:var(--fucsia-4)!important;color:var(--ink)!important}
-.nav a{font:300 24px/1.42 Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+.nav a{font:300 24px/1.42 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
   background:linear-gradient(var(--line,var(--accent)),var(--line,var(--accent))) left 92%/0 4px no-repeat;padding-bottom:3px;transition:background-size .35s var(--ease)}
 .nav a:hover,.nav a[aria-current]{background-size:100% 4px}
 .social{display:flex;gap:18px;margin-top:22px;list-style:none}
@@ -73,10 +73,10 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .meta{position:absolute;left:var(--indent);bottom:calc(100% - 7px);padding-bottom:0;display:flex;align-items:center;gap:10px;white-space:nowrap;
   opacity:0;transform:translateY(26px);transition:opacity .3s var(--ease),transform .45s var(--ease);pointer-events:none;z-index:0}
 .card:hover .meta,.card:focus-within .meta{opacity:1;transform:none}
-.meta .cat{background:var(--accent);color:var(--on-accent);font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;padding:6px 14px}
-.meta .date{font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;color:var(--ink)}
+.meta .cat{background:var(--accent);color:var(--on-accent);font:400 11px/17.875px var(--text);letter-spacing:normal;text-transform:uppercase;padding:6px 14px}
+.meta .date{font:400 11px/17.875px var(--text);letter-spacing:normal;text-transform:uppercase;color:var(--ink)}
 /* Autor y fecha como en Patch: «Por MAUREN LÓPEZ / OCT 30, 2026». «Por» va en minúscula; nombre y fecha en mayúsculas. */
-.meta .by,.post__meta .by{font:400 11px/17.875px Roboto,sans-serif;color:var(--ink);text-transform:none;white-space:nowrap}
+.meta .by,.post__meta .by{font:400 11px/17.875px var(--text);color:var(--ink);text-transform:none;white-space:nowrap}
 .meta .by b,.post__meta .by b{font-weight:400;text-transform:uppercase}
 .meta .by + .date,.post__meta .by + .date{margin-left:-6px}
 .meta .by + .date::before,.post__meta .by + .date::before{content:"/";margin:0 4px}
@@ -91,18 +91,18 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card__img{position:relative;overflow:hidden;aspect-ratio:var(--r,4/3);background:var(--soft);z-index:1}
 .card__img img{filter:grayscale(1);transition:filter .6s var(--ease)}
 .card__img::after{content:"";position:absolute;inset:0;background:rgba(24,25,30,.22);opacity:0;transition:opacity .45s var(--ease)}
-.more{position:absolute;left:50%;top:50%;z-index:1;color:var(--light);font:500 26px/1 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
+.more{position:absolute;left:50%;top:50%;z-index:1;color:var(--light);font:500 26px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;
   opacity:0;transform:translate(-50%,calc(-50% + 8px));transition:opacity .35s var(--ease),transform .45s var(--ease)}
 .card:hover .card__img img,.card:focus-within .card__img img{filter:grayscale(0)}
 .card:hover .card__img::after{opacity:1}
 .card:hover .more{opacity:1;transform:translate(-50%,-50%)}
 
 /* Texto (medidas de Patch), sin justificar */
-.card__title{font:400 26px/1.45 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.card__title{font:400 26px/1.45 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .card__body{padding:9px 0 0 var(--indent)}
 .card p,.card li{font-size:14px;line-height:1.5;color:var(--gray)}
 .card__body p{margin-top:8px}
-.link-more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:400 13px/1 Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.link-more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:400 13px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 .link-more i{font-style:normal;transition:transform .35s var(--ease)}
 .card:hover .link-more i{transform:translateX(5px)}
 
@@ -140,7 +140,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card--dark .facts{margin-top:14px;list-style:none}
 .card--dark .facts li,.card--dark p.small{color:var(--on-dark)}
 .card--dark .facts li + li{margin-top:6px}
-.card--dark cite{display:block;margin-top:18px;font:500 15px/1 Oswald,sans-serif;text-transform:uppercase;font-style:normal;color:var(--on-dark)}
+.card--dark cite{display:block;margin-top:18px;font:500 15px/1 var(--display);text-transform:uppercase;font-style:normal;color:var(--on-dark)}
 .card--dark .contact{margin-top:12px;line-height:1.7;color:var(--on-dark);text-align:left}
 .card--dark .contact a{border-bottom:1px solid rgba(203,202,206,.35);transition:border-color .25s}
 .card--dark .contact a:hover{border-color:var(--on-dark)}
@@ -155,22 +155,22 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .card .list li{padding-left:14px;position:relative}
 .card .list li + li{margin-top:4px}
 .card .list li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:1px;background:var(--ink)}
-.label{display:block;margin-top:18px;font:500 11px/1 Roboto,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.label{display:block;margin-top:18px;font:500 11px/1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .card__body > .label:first-child{margin-top:4px}
 .link-more.back:hover i,.card:hover .link-more.back i{transform:translateX(-5px)}
 
 /* ---------- Artículo: una columna, imágenes dentro del texto (p. ej. escala-grises.html) ---------- */
 .post{max-width:700px;margin:0 0 72px 156px}   /* 156 px = logo + espacio: el texto arranca alineado con el menú */
 .post__meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.post__meta .cat{background:var(--accent);color:var(--on-accent);font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;padding:6px 14px}
-.post__meta .date{font:400 11px/17.875px Roboto,sans-serif;letter-spacing:normal;text-transform:uppercase;color:var(--ink)}
-.post__title{font:400 44px/1.2 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
-.post h2{margin:44px 0 0;font:400 24px/1.35 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.post__meta .cat{background:var(--accent);color:var(--on-accent);font:400 11px/17.875px var(--text);letter-spacing:normal;text-transform:uppercase;padding:6px 14px}
+.post__meta .date{font:400 11px/17.875px var(--text);letter-spacing:normal;text-transform:uppercase;color:var(--ink)}
+.post__title{font:400 44px/1.2 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.post h2{margin:44px 0 0;font:400 24px/1.35 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .post p{margin-top:14px;font-size:16px;line-height:1.75;color:var(--gray)}
 .post__lead{font-size:19px!important;line-height:1.6!important;margin-top:20px!important}
 .post__fig{margin:32px 0 8px}
 .post__fig img{height:auto;object-fit:contain}
-.post__fig figcaption,.post__fig + .label{margin-top:10px;font:500 11px/1.4 Roboto,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.post__fig figcaption,.post__fig + .label{margin-top:10px;font:500 11px/1.4 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .post__fig.side{float:right;width:270px;margin:18px 0 16px 36px}
 .post h2{clear:both}
 .post__fig.tall{width:62%}
@@ -181,7 +181,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .post__rule{border:0;border-top:1px solid var(--soft);margin:48px 0 0}
 .post .post__ref{font-size:14px;line-height:1.6;padding-left:28px;text-indent:-28px}
 .post__ref a{word-break:break-all;color:var(--muted)}
-.post h3{margin:28px 0 0;font:400 19px/1.4 Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.post h3{margin:28px 0 0;font:400 19px/1.4 var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .post .list{list-style:none;margin-top:14px}
 .post .list li{position:relative;padding-left:16px;font-size:16px;line-height:1.65;color:var(--gray)}
 .post .list li + li{margin-top:4px}
@@ -197,10 +197,10 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .post__pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0 8px}
 .post__pair .post__fig{margin:0}
 .post__pair img{aspect-ratio:3/4;object-fit:cover}
-.post__info{margin-top:22px!important;font:500 11px/1.5 Roboto,sans-serif!important;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
+.post__info{margin-top:22px!important;font:500 11px/1.5 var(--text)!important;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
 /* Nota destacada dentro del artículo (antes, el bloque oscuro del collage) */
 .post__note{margin:40px 0;padding:4px 0 4px 24px;border-left:3px solid var(--ink)}
-.post__note-title{margin:0!important;font:400 22px/1.45 Oswald,"Arial Narrow",sans-serif!important;color:var(--ink)!important}
+.post__note-title{margin:0!important;font:400 22px/1.45 var(--display)!important;color:var(--ink)!important}
 .post__note ul{list-style:none;margin-top:12px}
 .post__note li{font-size:15px;line-height:1.6;color:var(--gray)}
 .post__note li + li{margin-top:4px}
@@ -239,4 +239,42 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important}
   .card{opacity:1;transform:none}
+}
+
+/* ---------- Gráfica editorial (prueba 2026-11-13) ----------
+   Referencia: «ESTILO DE LETRAS.png». Títulos en sans serif recta, regular y en mayúsculas;
+   texto en peso ligero; etiquetas pequeñas, espaciadas y grises. Sustituye a Oswald + Roboto. */
+:root{--display:"Inter Tight","Helvetica Neue",Arial,sans-serif;--text:Inter,"Helvetica Neue",Arial,sans-serif}
+body{font:300 15px/1.65 var(--text);letter-spacing:.01em}
+.nav a{font:400 13px/2.1 var(--display);letter-spacing:.14em;background-position:left 100%;background-size:0 1px;padding-bottom:1px}
+.nav a:hover,.nav a[aria-current]{background-size:100% 1px}
+.card__title{font:400 19px/1.35 var(--display);letter-spacing:.01em}
+.card--side .card__title,.card--overlap .box .card__title,.card--text .card__title{font-size:22px;line-height:1.3}
+.card--dark .card__title{font-size:19px;font-weight:300;line-height:1.55;text-transform:none}
+.card--dark cite{font:400 11px/1 var(--display);letter-spacing:.16em}
+.more{font:400 12px/1 var(--display);letter-spacing:.22em}
+.link-more{font:400 11px/1 var(--display);letter-spacing:.16em}
+.meta .cat,.post__meta .cat{font-size:10px;letter-spacing:.1em}
+.label,.post__fig figcaption,.post__fig + .label,.post__info,.site-footer{font-weight:400!important;font-size:10px!important;letter-spacing:.16em}
+.post__title{font:400 34px/1.2 var(--display);letter-spacing:0}
+.post h2{font:400 18px/1.4 var(--display);letter-spacing:.03em}
+.post h3{font:400 15px/1.45 var(--display);letter-spacing:.04em}
+.post p{font-size:15px;line-height:1.7}
+.post__lead{font-size:17px!important;line-height:1.65!important}
+.post .list li{font-size:15px}
+.post__note{border-left-width:1px}
+.post__note-title{font:300 20px/1.5 var(--display)!important}
+/* Bloques sin fondo negro: blanco con línea fina gris, como el recuadro «Item 2 of 51» de la referencia */
+.card--dark .inner,.card--dark:hover .inner,.card--dark:focus-within .inner{background:var(--paper);border:1px solid var(--g2)}
+.card--dark .card__title{color:var(--ink)}
+.card--dark .facts li,.card--dark p.small,.card--dark cite,.card--dark .contact{color:var(--gray)}
+.card--dark .contact a{border-bottom-color:var(--g2)}
+.card--dark .contact a:hover{border-color:var(--ink)}
+.card--dark .link-more{color:var(--ink)!important}
+.card--overlap .box{background:var(--paper);padding:16px 20px 4px}
+.card--overlap .box .card__title{color:var(--ink)}
+@media (max-width:640px){
+  .nav a{font-size:13px}
+  .post__title{font-size:26px}
+  .card--side .card__title,.card--overlap .box .card__title,.card--text .card__title{font-size:20px}
 }
