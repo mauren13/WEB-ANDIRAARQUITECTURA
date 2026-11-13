@@ -1,4 +1,4 @@
-// ANDIRA Arquitectura · correos del contacto (estudio.html).
+// ANDIRA Arquitectura · correos del contacto (contacto.html).
 // Las direcciones no están escritas en el HTML: se arman al hacer clic en «Mostrar correos»,
 // para que los programas que recorren páginas buscando correos no las encuentren.
 (function(){

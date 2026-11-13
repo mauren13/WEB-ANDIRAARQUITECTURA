@@ -1,5 +1,12 @@
 # Registro de versiones
 
+## v5.4 · 2026-11-13
+- Estudio: texto nuevo de presentación del estudio, con los retratos de las socias en cuadrado y a todo el ancho después del primer párrafo.
+- Página de Contacto: WhatsApp del negocio, redes y un botón «Mostrar correos» (las direcciones se arman al hacer clic, no están en el HTML). El menú enlaza a esta página.
+- Autoría: las publicaciones sin autor pasan a «Por ANDIRA»; acristalamiento acústico, por Mauren López (13-11-2026); fechas de Oasis Beach Club (15-01-2026) y Doña Victoria (10-03-2026).
+- La pestaña de categoría pasa a una segunda línea si no cabe, en lugar de salirse de la columna.
+- El recuadro del título sobre la imagen (Alora House, Oficinas en Alajuela) es translúcido.
+
 ## v5.3 · 2026-11-13
 - El icono de WhatsApp y el contacto de Estudio usan el número del negocio, (506) 6178-4433. Se quitan los números anteriores.
 - «Contacto» vuelve al menú, después de Estudio, y abre el WhatsApp del negocio.

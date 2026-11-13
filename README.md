@@ -15,9 +15,10 @@ En línea: <https://andiraarquitectura.com>
 ├── escala-grises.html       Textos de la bitácora (formato artículo)
 ├── acustica-ventanas.html
 ├── leed.html
-├── estudio.html             Quiénes somos y contacto
-├── contacto.html            Redirige a estudio.html#contacto
+├── estudio.html             Quiénes somos
+├── contacto.html            Contacto (los correos se muestran con contacto.js)
 ├── estilos.css              Todos los estilos (índice al inicio del archivo)
+├── contacto.js              Muestra los correos al hacer clic (contacto.html)
 ├── collage.js               Reparte las tarjetas del collage en columnas
 ├── intro.js                 Intro de la portada (una vez por visita; ?intro la repite)
 ├── img/                     Imágenes, nombradas proyecto-vista.jpg
