@@ -1,5 +1,9 @@
 # Registro de versiones
 
+## v5.5 · 2026-11-13
+- El collage llena pantallas anchas: 4 columnas desde 1700 px de grilla y 5 desde 2200 px (antes, máximo 3 y ancho fijo de 1360 px). Las líneas entre columnas se dibujan para 2 a 5 columnas.
+- El recuadro del título sobre la imagen pasa a 60 % de blanco.
+
 ## v5.4 · 2026-11-13
 - Estudio: texto nuevo de presentación del estudio, con los retratos de las socias en cuadrado y a todo el ancho después del primer párrafo.
 - Página de Contacto: WhatsApp del negocio, redes y un botón «Mostrar correos» (las direcciones se arman al hacer clic, no están en el HTML). El menú enlaza a esta página.

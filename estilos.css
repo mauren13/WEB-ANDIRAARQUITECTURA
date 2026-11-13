@@ -58,7 +58,7 @@ body{background:var(--paper);color:var(--gray);font:300 var(--text-size)/var(--t
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 
-.page{max-width:1360px;margin:0 auto;padding:56px 64px 40px}
+.page{padding:56px 64px 40px}   /* sin ancho máximo: el collage suma columnas en pantallas anchas (collage.js) */
 
 /* Etiqueta: texto pequeño en mayúsculas para categorías, fechas y pies de foto */
 .post__kicker,.post__meta,.post__subtitle,.post__info,.post__fig figcaption,.site-footer{
@@ -107,14 +107,30 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .col:last-child{padding-right:0}
 .col:nth-child(3){padding-top:80px}
 
-/* Línea vertical: fondo de la grilla, porque las columnas deben conservar su alto real
-   para que collage.js pueda comparar alturas. */
+/* Líneas verticales: fondo de la grilla, porque las columnas deben conservar su alto real
+   para que collage.js pueda comparar alturas. Con n columnas, el ancho de cada una es
+   c = (100% − 2(n−1)·cell) / n y la línea k cae en k·c + (2k−1)·cell. */
 .grid:has(> .col:nth-child(2)){
-  background:linear-gradient(var(--rule),var(--rule)) 50% 0/1px 100% no-repeat}
+  --vline:linear-gradient(var(--rule),var(--rule));
+  background:var(--vline) 50% 0/1px 100% no-repeat}
 .grid:has(> .col:nth-child(3)){
+  --c:calc((100% - 4 * var(--cell)) / 3);
   background:
-    linear-gradient(var(--rule),var(--rule)) calc((100% - 4 * var(--cell)) / 3 + var(--cell)) 0/1px 100% no-repeat,
-    linear-gradient(var(--rule),var(--rule)) calc((100% - 4 * var(--cell)) * 2 / 3 + 3 * var(--cell)) 0/1px 100% no-repeat}
+    var(--vline) calc(var(--c) + var(--cell)) 0/1px 100% no-repeat,
+    var(--vline) calc(var(--c) * 2 + 3 * var(--cell)) 0/1px 100% no-repeat}
+.grid:has(> .col:nth-child(4)){
+  --c:calc((100% - 6 * var(--cell)) / 4);
+  background:
+    var(--vline) calc(var(--c) + var(--cell)) 0/1px 100% no-repeat,
+    var(--vline) calc(var(--c) * 2 + 3 * var(--cell)) 0/1px 100% no-repeat,
+    var(--vline) calc(var(--c) * 3 + 5 * var(--cell)) 0/1px 100% no-repeat}
+.grid:has(> .col:nth-child(5)){
+  --c:calc((100% - 8 * var(--cell)) / 5);
+  background:
+    var(--vline) calc(var(--c) + var(--cell)) 0/1px 100% no-repeat,
+    var(--vline) calc(var(--c) * 2 + 3 * var(--cell)) 0/1px 100% no-repeat,
+    var(--vline) calc(var(--c) * 3 + 5 * var(--cell)) 0/1px 100% no-repeat,
+    var(--vline) calc(var(--c) * 4 + 7 * var(--cell)) 0/1px 100% no-repeat}
 
 
 /* 6. Tarjetas

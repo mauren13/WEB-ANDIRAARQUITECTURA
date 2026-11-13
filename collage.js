@@ -1,5 +1,5 @@
 // ANDIRA Arquitectura · collage de la portada y los listados.
-// Reparte las tarjetas de #grid en 1, 2 o 3 columnas según el ancho, cada una en la
+// Reparte las tarjetas de #grid en 1 a 5 columnas según el ancho, cada una en la
 // columna más corta, ajusta las tarjetas laterales y las hace aparecer al llegar a la vista.
 (function(){
   var grid = document.getElementById('grid');
@@ -7,7 +7,15 @@
   var items = Array.prototype.slice.call(grid.children);
   var current = 0;
 
-  function columnsFor(w){ return w >= 1000 ? 3 : (w >= 600 ? 2 : 1); }
+  // Ancho de la grilla → columnas. Cada columna queda entre ~360 y ~480 px, así que en
+  // monitores anchos (o con el navegador alejado) entran más tarjetas del mismo tamaño.
+  // Las líneas verticales de cada caso están en estilos.css (sección 5).
+  function columnsFor(w){
+    if (w >= 2200) return 5;
+    if (w >= 1700) return 4;
+    if (w >= 1000) return 3;
+    return w >= 600 ? 2 : 1;
+  }
 
   // Tarjeta lateral: el texto termina justo en el borde inferior de la imagen.
   // Si sobra texto se corta con "…"; si falta, la imagen se acorta (hasta casi cuadrada).
