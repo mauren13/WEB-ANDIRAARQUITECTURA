@@ -241,30 +241,32 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   .card{opacity:1;transform:none}
 }
 
-/* ---------- Gráfica editorial (prueba 2026-11-13) ----------
-   Referencia: «ESTILO DE LETRAS.png». Títulos en sans serif recta, regular y en mayúsculas;
-   texto en peso ligero; etiquetas pequeñas, espaciadas y grises. Sustituye a Oswald + Roboto. */
-:root{--display:"Inter Tight","Helvetica Neue",Arial,sans-serif;--text:Inter,"Helvetica Neue",Arial,sans-serif}
-body{font:300 15px/1.65 var(--text);letter-spacing:.01em}
-.nav a{font:400 13px/2.1 var(--display);letter-spacing:.14em;background-position:left 100%;background-size:0 1px;padding-bottom:1px}
+/* ---------- Gráfica editorial (2026-11-13) ----------
+   Medidas tomadas de «ESTILO DE LETRAS.png» (1178 px de ancho):
+   título: mayúscula de 24 px → Inter Tight 400 33 px, 559 px de ancho → letter-spacing .02em;
+   texto: «x» de 9 px y ascendente de 12 px → Inter Tight 300 16.4 px, interlineado 21.7 px;
+   etiquetas: mayúscula de 7 px → 9.6 px, gris; columna de texto 525 px, imagen 861 px.
+   Distancias entre topes de letra: categoría → título 30 px, título → fecha 62 px,
+   fecha → texto 29 px, última línea → imagen 42 px. */
+:root{--display:"Inter Tight","Helvetica Neue",Arial,sans-serif;--text:"Inter Tight","Helvetica Neue",Arial,sans-serif;--col:525px;--wide:861px}
+body{font:300 16.4px/21.7px var(--text);letter-spacing:0}
+
+/* Menú y etiquetas */
+.nav a{font:400 12px/2.2 var(--display);letter-spacing:.1em;background-position:left 100%;background-size:0 1px;padding-bottom:1px}
 .nav a:hover,.nav a[aria-current]{background-size:100% 1px}
-.card__title{font:400 19px/1.35 var(--display);letter-spacing:.01em}
-.card--side .card__title,.card--overlap .box .card__title,.card--text .card__title{font-size:22px;line-height:1.3}
-.card--dark .card__title{font-size:19px;font-weight:300;line-height:1.55;text-transform:none}
-.card--dark cite{font:400 11px/1 var(--display);letter-spacing:.16em}
-.more{font:400 12px/1 var(--display);letter-spacing:.22em}
-.link-more{font:400 11px/1 var(--display);letter-spacing:.16em}
-.meta .cat,.post__meta .cat{font-size:10px;letter-spacing:.1em}
-.label,.post__fig figcaption,.post__fig + .label,.post__info,.site-footer{font-weight:400!important;font-size:10px!important;letter-spacing:.16em}
-.post__title{font:400 34px/1.2 var(--display);letter-spacing:0}
-.post h2{font:400 18px/1.4 var(--display);letter-spacing:.03em}
-.post h3{font:400 15px/1.45 var(--display);letter-spacing:.04em}
-.post p{font-size:15px;line-height:1.7}
-.post__lead{font-size:17px!important;line-height:1.65!important}
-.post .list li{font-size:15px}
-.post__note{border-left-width:1px}
-.post__note-title{font:300 20px/1.5 var(--display)!important}
-/* Bloques sin fondo negro: blanco con línea fina gris, como el recuadro «Item 2 of 51» de la referencia */
+.meta .cat,.post__meta .cat{font:400 9.6px/17.875px var(--text);letter-spacing:.03em}
+.meta .by,.meta .date{font:400 9.6px/17.875px var(--text);letter-spacing:.03em;text-transform:uppercase;color:var(--g5)}
+.label,.post__fig figcaption,.post__fig + .label,.post__info,.site-footer{font:400 9.6px/1.4 var(--text)!important;letter-spacing:.03em!important;text-transform:uppercase;color:var(--g5)!important}
+
+/* Tarjetas del collage: misma relación título / texto que el artículo (33 : 16.4) */
+.card__title{font:400 28px/1.15 var(--display);letter-spacing:.02em}
+.card--side .card__title,.card--overlap .box .card__title,.card--text .card__title{font-size:24px;line-height:1.15}
+.card p,.card li{font-size:14px;line-height:18.5px}
+.card--dark .card__title{font-size:20px;font-weight:300;line-height:26.5px;letter-spacing:0;text-transform:none}
+.card--dark cite,.link-more{font:400 9.6px/1 var(--display);letter-spacing:.1em}
+.more{font:400 12px/1 var(--display);letter-spacing:.2em}
+
+/* Bloques sin fondo negro: blanco con línea fina gris, como el recuadro «Item 2 of 51» */
 .card--dark .inner,.card--dark:hover .inner,.card--dark:focus-within .inner{background:var(--paper);border:1px solid var(--g2)}
 .card--dark .card__title{color:var(--ink)}
 .card--dark .facts li,.card--dark p.small,.card--dark cite,.card--dark .contact{color:var(--gray)}
@@ -273,8 +275,34 @@ body{font:300 15px/1.65 var(--text);letter-spacing:.01em}
 .card--dark .link-more{color:var(--ink)!important}
 .card--overlap .box{background:var(--paper);padding:16px 20px 4px}
 .card--overlap .box .card__title{color:var(--ink)}
+
+/* Artículo: columna de texto de 525 px; imágenes de 861 px */
+.post{max-width:var(--wide)}
+.post p,.post h2,.post h3,.post .list,.post__note,.post__meta,.post__kicker,.post__rule{max-width:var(--col)}
+.post__kicker{margin:0!important;font:400 9.6px/12px var(--text)!important;letter-spacing:.03em;text-transform:uppercase;color:var(--g5)!important}
+.post__title{margin-top:13px;font:400 33px/39.6px var(--display);letter-spacing:.02em;color:var(--ink)}
+.post__meta{display:block;margin:28px 0 0;font:400 9.6px/12px var(--text);letter-spacing:.03em;text-transform:uppercase;color:var(--g5)}
+.post__meta .by,.post__meta .date{font:inherit;color:inherit;text-transform:uppercase}
+.post__meta .by b{font-weight:400}
+.post__meta .by + .date{margin-left:0}
+.post__meta .date:first-child::before{content:none}
+.post__meta + p,.post__meta + .post__lead{margin-top:15px!important}
+.post p:not(.post__kicker):not(.post__info):not(.post__note-title),.post__lead{font-size:16.4px!important;line-height:21.7px!important;color:var(--ink)}
+.post p:not(.post__kicker):not(.post__info):not(.post__note-title){margin-top:21.7px}
+.post__fig,.post__pair{margin:37px 0 0}
+.post__fig figcaption{margin-top:12px}
+.post__fig + p,.post__pair + p,.post__fig + .post__info{margin-top:30px}
+.post h2{margin-top:52px;font:400 20px/26px var(--display);letter-spacing:.02em}
+.post h3{margin-top:30px;font:400 16.4px/21.7px var(--display);letter-spacing:.02em}
+.post .list li,.post__note li{font-size:16.4px;line-height:21.7px;color:var(--ink)}
+.post__note{margin:40px 0 0;border-left-width:1px}
+.post__note-title{font:300 20px/26.5px var(--display)!important}
+.post__info{margin-top:21.7px!important}
+.post .link-more{margin-top:52px}
+
 @media (max-width:640px){
-  .nav a{font-size:13px}
-  .post__title{font-size:26px}
-  .card--side .card__title,.card--overlap .box .card__title,.card--text .card__title{font-size:20px}
+  .nav a{font-size:12px}
+  .post__title{font-size:26px;line-height:31px}
+  .card__title{font-size:24px}
+  .card--side .card__title,.card--overlap .box .card__title,.card--text .card__title{font-size:22px}
 }
