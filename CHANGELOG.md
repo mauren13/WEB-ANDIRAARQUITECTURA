@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.1 · 2026-11-13
+- `estilos.css` y `collage.js` vuelven a la raíz: en v5 estaban en `css/` y `js/`, el servidor no publicó esas carpetas y el sitio quedó sin estilos unos minutos.
+
 ## v5 · 2026-11-13
 Gráfica editorial
 - Tipografía Inter Tight en lugar de Oswald y Roboto. Proporciones tomadas de una referencia editorial: título de 33 px, texto de 16,4 / 21,7 px y etiquetas de 9,6 px.
