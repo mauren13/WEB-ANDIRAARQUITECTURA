@@ -18,7 +18,7 @@
   --g7:#636269; --g8:#525157; --g9:#424046; --g10:#333338; --g11:#24242A; --g12:#18191E; --g13:#0B0C0E;
 
   /* Color de énfasis y sus cuatro pasos, uno por sección del menú
-     (Proyectos, Colaboraciones, Bitácora, Estudio). */
+     (Proyectos, Colaboraciones, Bitácora, Estudio). Contacto usa el énfasis. */
   --accent:#E6007E;
   --fucsia-1:#E6007E; --fucsia-2:#EC409E; --fucsia-3:#F27ABC; --fucsia-4:#F7ADD6;
 
@@ -81,6 +81,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .nav li:nth-child(2){--line:var(--fucsia-2)}
 .nav li:nth-child(3){--line:var(--fucsia-3)}
 .nav li:nth-child(4){--line:var(--fucsia-4)}
+.nav li:nth-child(5){--line:var(--accent)}
 .nav a{font:400 12px/2.2 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding-bottom:1px;
   background:linear-gradient(var(--line),var(--line)) left 100%/0 1px no-repeat;transition:background-size .35s var(--ease)}
 .nav a:hover,.nav a[aria-current]{background-size:100% 1px}

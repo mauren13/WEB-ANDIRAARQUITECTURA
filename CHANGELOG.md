@@ -1,5 +1,9 @@
 # Registro de versiones
 
+## v5.3 · 2026-11-13
+- El icono de WhatsApp y el contacto de Estudio usan el número del negocio, (506) 6178-4433. Se quitan los números anteriores.
+- «Contacto» vuelve al menú, después de Estudio, y abre el WhatsApp del negocio.
+
 ## v5.2 · 2026-11-13
 - Intro en la portada: la página abre en blanco, el logo aparece al centro, hace una pausa de 1 s y viaja a su lugar en el encabezado mientras aparece la página (unos 3,5 s). Se muestra una vez por visita y no aparece con «reducir movimiento» activado. Con `?intro` en la dirección se repite, para revisarla.
 
