@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.2 · 2026-11-13
+- Intro en la portada: la página abre en blanco, el logo aparece al centro, hace una pausa de 1 s y viaja a su lugar en el encabezado mientras aparece la página (unos 3,5 s). Se muestra una vez por visita y no aparece con «reducir movimiento» activado. Con `?intro` en la dirección se repite, para revisarla.
+
 ## v5.1 · 2026-11-13
 - `estilos.css` y `collage.js` vuelven a la raíz: en v5 estaban en `css/` y `js/`, el servidor no publicó esas carpetas y el sitio quedó sin estilos unos minutos.
 

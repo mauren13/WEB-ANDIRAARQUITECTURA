@@ -19,11 +19,12 @@ En línea: <https://andiraarquitectura.com>
 ├── contacto.html            Redirige a estudio.html#contacto
 ├── estilos.css              Todos los estilos (índice al inicio del archivo)
 ├── collage.js               Reparte las tarjetas del collage en columnas
+├── intro.js                 Intro de la portada (una vez por visita; ?intro la repite)
 ├── img/                     Imágenes, nombradas proyecto-vista.jpg
 └── .github/workflows/       Publicación automática
 ```
 
-Las páginas viven en la raíz para que sus URL sean cortas (`/proyecto-cartago.html`). `estilos.css` y `collage.js` también van en la raíz: al moverlos a `css/` y `js/` (2026-11-13) el servidor no publicó esas carpetas y respondió 404, mientras que `img/` sí se publica. Antes de crear carpetas nuevas hay que revisar el script `actualizar` del servidor.
+Las páginas viven en la raíz para que sus URL sean cortas (`/proyecto-cartago.html`). `estilos.css`, `collage.js` e `intro.js` también van en la raíz: al moverlos a `css/` y `js/` (2026-11-13) el servidor no publicó esas carpetas y respondió 404, mientras que `img/` sí se publica. Antes de crear carpetas nuevas hay que revisar el script `actualizar` del servidor.
 
 ## Ver el sitio en local
 
