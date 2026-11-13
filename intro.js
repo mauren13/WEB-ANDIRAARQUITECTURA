@@ -12,7 +12,7 @@
   // Tiempos en ms; las duraciones de cada transición están en estilos.css (sección 8).
   var BLANK = 400;     // página en blanco antes de que aparezca el logo
   var ENTER = 600;     // el logo aparece y sube a su lugar en el centro
-  var HOLD = 700;      // pausa con el logo quieto
+  var HOLD = 1000;     // pausa con el logo quieto
   var MOVE = 1400;     // viaje a la esquina
 
   function done(){

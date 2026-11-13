@@ -271,8 +271,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .post .link-more{margin-top:52px;clear:both}
 
 
-/* 8. Intro de la portada (intro.js), unos 3,2 s en total:
-   blanco 0,4 s → el logo aparece al centro subiendo 20 px (0,6 s) → pausa 0,7 s →
+/* 8. Intro de la portada (intro.js), unos 3,5 s en total:
+   blanco 0,4 s → el logo aparece al centro subiendo 20 px (0,6 s) → pausa 1 s →
    viaja a su lugar en 1,4 s frenando despacio, mientras la página aparece.
    Si intro.js no corre, la página se muestra a los 5 s.
    ========================================================================== */
