@@ -1,5 +1,10 @@
 # Registro de versiones
 
+## v5.6 · 2026-11-14
+- Vuelve el collage de 3 columnas con ancho máximo de 1360 px, como en Patch: se revierte el cambio de 4 y 5 columnas en pantallas anchas.
+- El menú cambia «Colaboraciones» por «Acústica», que lleva a un listado nuevo (acustica.html). Colaboraciones queda fuera del menú.
+- El recuadro del título sobre la imagen pasa a 60 % de blanco.
+
 ## v5.4 · 2026-11-13
 - Estudio: texto nuevo de presentación del estudio, con los retratos de las socias en cuadrado y a todo el ancho después del primer párrafo.
 - Página de Contacto: WhatsApp del negocio, redes y un botón «Mostrar correos» (las direcciones se arman al hacer clic, no están en el HTML). El menú enlaza a esta página.

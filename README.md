@@ -9,7 +9,8 @@ En línea: <https://andiraarquitectura.com>
 ```
 ├── index.html               Portada (collage)
 ├── proyectos.html           Listados en collage
-├── colaboraciones.html
+├── acustica.html            Listado de Acústica (menú)
+├── colaboraciones.html      Listado de colaboraciones (fuera del menú por ahora)
 ├── bitacora.html
 ├── proyecto-*.html          Páginas de proyecto (formato artículo)
 ├── escala-grises.html       Textos de la bitácora (formato artículo)
