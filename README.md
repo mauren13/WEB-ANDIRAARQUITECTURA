@@ -17,6 +17,7 @@ En línea: <https://andiraarquitectura.com>
 ├── acustica-ventanas.html
 ├── leed.html
 ├── estudio.html             Quiénes somos
+├── nombre.html              Carta sobre el origen del nombre (enlazada desde Estudio)
 ├── contacto.html            Contacto (los correos se muestran con contacto.js)
 ├── estilos.css              Todos los estilos (índice al inicio del archivo)
 ├── contacto.js              Muestra los correos al hacer clic (contacto.html)

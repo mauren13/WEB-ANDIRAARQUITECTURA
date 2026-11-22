@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.7 · 2026-11-21
+- Página nueva «Andira · El origen de nuestro nombre» (nombre.html), con la carta sobre *Andira inermis*, fechada el 21-11-2026. Se enlaza desde una tarjeta de la portada y desde el final de Estudio.
+
 ## v5.6 · 2026-11-14
 - Vuelve el collage de 3 columnas con ancho máximo de 1360 px, como en Patch: se revierte el cambio de 4 y 5 columnas en pantallas anchas.
 - El menú cambia «Colaboraciones» por «Acústica», que lleva a un listado nuevo (acustica.html). Colaboraciones queda fuera del menú.
