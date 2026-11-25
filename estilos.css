@@ -249,7 +249,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .post__fig{margin-top:37px}
 .post__fig img{height:auto;object-fit:contain}
 .post__fig figcaption{margin-top:12px;line-height:1.4}
-.post__fig.side{float:right;width:270px;margin:18px 0 16px 36px}
+.post__fig.side{float:right;clear:right;width:270px;margin:18px 0 16px 36px}
+.post__fig.side--small{width:160px}   /* dibujos pequeños (carta del nombre) */
 .post--aside h2{clear:none}   /* los subtítulos siguen junto a la figura lateral, sin dejar hueco */
 .post--aside .post__fig.wide{clear:both}
 .post__fig.tall{width:62%}
@@ -314,6 +315,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
   .card--square .card__img{margin-left:0}
   .post__title{font-size:26px;line-height:31px}
   .post__fig.side{float:none;width:80%;margin:24px auto 8px}
+  .post__fig.side--small{width:45%}
   .post__fig.tall{width:100%}
   .post__pair{gap:12px}
 }

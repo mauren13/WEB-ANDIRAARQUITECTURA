@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilos.css?v=5.11">
+<link rel="stylesheet" href="estilos.css?v=5.12">
 <script>/* Intro de la portada (ver intro.js) */try{if((/[?&]intro(&|=|$)/.test(location.search)||!sessionStorage.getItem("andira-intro"))&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
 </head>
 <body>
@@ -57,12 +57,15 @@
     </a>
   </article>
 
-  <!-- Carta del nombre; el texto completo está en nombre.html. -->
-  <article class="card card--statement">
+  <!-- Carta del nombre; el texto completo está en nombre.html. Frases tomadas de la carta. -->
+  <article class="card card--square">
     <div class="meta"><span class="cat f4">Estudio</span><span class="by">Por <b>ANDIRA</b></span><span class="date">Nov 21, 2026</span></div>
-    <a class="inner" href="nombre.html">
-      <p class="card__title">Andira: el origen de nuestro nombre</p>
-      <span class="link-more">Leer <i>→</i></span>
+    <a class="card__link" href="nombre.html">
+      <figure class="card__img" style="--r:553/890"><img src="img/andira-rama.jpg" alt="Dibujo de una rama de Andira inermis con hojas, flores y frutos"><span class="more">Leer</span></figure>
+      <div class="card__body">
+        <h2 class="card__title">Andira: el origen de nuestro nombre</h2>
+        <p><i>Andira inermis</i> es un árbol de la familia Fabaceae, conocido en Costa Rica como almendro de montaña. Elegimos Andira por su relación con la materia, el tiempo y la construcción.</p>
+      </div>
     </a>
   </article>
 
@@ -225,7 +228,7 @@
 </main>
 <footer class="site-footer"><span>© 2026 ANDIRA Arquitectura</span><span>Cartago · Costa Rica</span></footer>
 </div>
-<script src="collage.js?v=5.11"></script>
-<script src="intro.js?v=5.11"></script>
+<script src="collage.js?v=5.12"></script>
+<script src="intro.js?v=5.12"></script>
 </body>
 </html>

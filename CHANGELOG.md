@@ -1,5 +1,9 @@
 # Registro de versiones
 
+## v5.12 · 2026-11-25
+- Carta del nombre: la tarjeta de la portada lleva el dibujo de la rama de *Andira inermis* y dos frases de la carta. Dentro de la carta, la flor y los botones florales.
+- Ilustraciones recortadas de una lámina botánica, sin cotas ni rótulos. El original y el script de recorte quedan en `fuentes/`.
+
 ## v5.11 · 2026-11-25
 - Contacto tiene su propio fucsia (#FBD9EC), más tenue que Estudio: la degradación del menú sigue de Proyectos a Contacto sin cortarse.
 - Documentación nueva en `docs/`: identidad gráfica, decisiones y pendientes.

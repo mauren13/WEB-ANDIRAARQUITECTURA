@@ -25,6 +25,7 @@ En línea: <https://andiraarquitectura.com>
 ├── intro.js                 Intro de la portada (una vez por visita; ?intro la repite)
 ├── img/                     Imágenes, nombradas proyecto-vista.jpg
 ├── docs/                    Identidad gráfica, decisiones y pendientes (no se publica)
+├── fuentes/                 Originales de las imágenes y scripts para recortarlas
 └── .github/workflows/       Publicación automática
 ```
 
