@@ -51,4 +51,6 @@ Cada `push` a `main` que toque HTML, CSS, JS o imágenes ejecuta `.github/workfl
 
 **Imágenes.** JPG de hasta 1400 px de lado; PNG solo cuando hace falta exactitud de color (escala de grises). Las renderizaciones se recortan para quitar el logo de la esquina.
 
-**Commits.** Uno por cambio, con un título en imperativo que diga qué cambia y un cuerpo que explique por qué. Cada versión publicada se etiqueta (`v1.0` … `v5`) y se resume en [CHANGELOG.md](CHANGELOG.md).
+**Caché.** Las páginas cargan `estilos.css` y los scripts con `?v=` y el número de versión (`estilos.css?v=5.10`). Al publicar un cambio de CSS o JS se sube ese número en todas las páginas, para que los navegadores no usen la copia vieja.
+
+& Uno por cambio, con un título en imperativo que diga qué cambia y un cuerpo que explique por qué. Cada versión publicada se etiqueta (`v1.0` … `v5`) y se resume en [CHANGELOG.md](CHANGELOG.md).

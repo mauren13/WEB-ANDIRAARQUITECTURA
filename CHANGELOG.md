@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.10 · 2026-11-25
+- Las páginas piden `estilos.css` y los scripts con el número de versión (`?v=5.10`). Así el navegador descarga los estilos nuevos al publicar, en lugar de mostrar la página con la copia anterior (que en el post de grises dejaba un hueco junto a la tabla).
+
 ## v5.9 · 2026-11-25
 - Color y percepción: la tabla de valores RGB y hexadecimales pasa al inicio, al costado del texto, para consultarla sin bajar. La franja horizontal de grises va en «Registro de la escala». Se elimina el hueco en blanco que dejaba la tabla junto a un texto corto.
 
