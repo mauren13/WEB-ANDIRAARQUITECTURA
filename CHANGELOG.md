@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.9 · 2026-11-25
+- Color y percepción: la tabla de valores RGB y hexadecimales pasa al inicio, al costado del texto, para consultarla sin bajar. La franja horizontal de grises va en «Registro de la escala». Se elimina el hueco en blanco que dejaba la tabla junto a un texto corto.
+
 ## v5.8 · 2026-11-24
 - Bitácora: el texto de la escala de grises se reemplaza por «Color y percepción en la documentación arquitectónica», con dos referencias (W3C y CIE) enlazadas. Las tarjetas de la portada y de Bitácora llevan el título nuevo.
 - Los enlaces de las referencias ya no cortan palabras a mitad de línea; solo las URL largas se parten.
