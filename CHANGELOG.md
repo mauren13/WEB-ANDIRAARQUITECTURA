@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.13 · 2026-11-25
+- Portada: la tarjeta de la carta del nombre baja a la parte final del collage, después de LEED.
+
 ## v5.12 · 2026-11-25
 - Carta del nombre: la tarjeta de la portada lleva el dibujo de la rama de *Andira inermis* y dos frases de la carta. Dentro de la carta, la flor y los botones florales.
 - Ilustraciones recortadas de una lámina botánica, sin cotas ni rótulos. El original y el script de recorte quedan en `fuentes/`.

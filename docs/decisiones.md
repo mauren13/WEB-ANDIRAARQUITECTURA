@@ -8,7 +8,7 @@ Registro de lo acordado y su motivo, para no volver a discutirlo. Lo que cambia 
 - **Autoría y fechas.** No se inventan autores ni fechas. Sin autor, la tarjeta dice «Por ANDIRA»; sin fecha, «Fecha pendiente».
 - **Menú.** Proyectos · Acústica · Bitácora · Estudio · Contacto. Acústica reemplazó a Colaboraciones (v5.6); la página `colaboraciones.html` sigue existiendo fuera del menú. Cuando haya más contenido se revisará qué sección se quita o ajusta.
 - **Estudio.** Presentación del estudio con los retratos en cuadrado, después del primer párrafo. Al final enlaza a la carta del nombre.
-- **Carta del nombre** (`nombre.html`). Página propia sobre *Andira inermis*, con tarjeta en la portada y enlace desde Estudio. Las ilustraciones salen de una lámina botánica (`fuentes/andira-inermis-lamina.webp`): la rama en la tarjeta, y la flor y los botones florales dentro de la carta. Se quitaron las cotas y rótulos porque no estaban bien indicadas; `fuentes/recortar-lamina.ps1` repite el recorte.
+- **Carta del nombre** (`nombre.html`). Página propia sobre *Andira inermis*, con tarjeta en la parte final de la portada (no arriba) y enlace desde Estudio. Las ilustraciones salen de una lámina botánica (`fuentes/andira-inermis-lamina.webp`): la rama en la tarjeta, y la flor y los botones florales dentro de la carta. Se quitaron las cotas y rótulos porque no estaban bien indicadas; `fuentes/recortar-lamina.ps1` repite el recorte.
 - **Post de grises.** La tabla de valores RGB y hexadecimales abre el artículo porque el estudio la consulta para actualizar otros documentos. La franja horizontal va en «Registro de la escala» y es la imagen de la tarjeta en la portada.
 
 ## Contacto y privacidad
