@@ -1,5 +1,8 @@
 # Registro de versiones
 
+## v5.14 · 2026-11-25
+- La línea que aparece bajo el menú al pasar el cursor pasa de 1 a 3 px, para que se note el fucsia de cada sección.
+
 ## v5.13 · 2026-11-25
 - Portada: la tarjeta de la carta del nombre baja a la parte final del collage, después de LEED.
 

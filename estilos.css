@@ -31,6 +31,7 @@
   --soft:var(--g1);      /* fondos claros y fondo de imagen mientras carga */
   --light:var(--g1);     /* texto claro sobre imágenes y sobre el énfasis */
   --rule:var(--g1);      /* líneas entre tarjetas */
+  --nav-line:3px;        /* grosor de la línea del menú: deja ver el fucsia de cada sección */
 
   /* Tipografía: una sola familia; el contraste viene del peso y del tamaño. */
   --font:"Inter Tight","Helvetica Neue",Arial,sans-serif;
@@ -83,9 +84,9 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .nav li:nth-child(3){--line:var(--fucsia-3)}
 .nav li:nth-child(4){--line:var(--fucsia-4)}
 .nav li:nth-child(5){--line:var(--fucsia-5)}
-.nav a{font:400 12px/2.2 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding-bottom:1px;
-  background:linear-gradient(var(--line),var(--line)) left 100%/0 1px no-repeat;transition:background-size .35s var(--ease)}
-.nav a:hover,.nav a[aria-current]{background-size:100% 1px}
+.nav a{font:400 12px/2.2 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding-bottom:2px;
+  background:linear-gradient(var(--line),var(--line)) left 100%/0 var(--nav-line) no-repeat;transition:background-size .35s var(--ease)}
+.nav a:hover,.nav a[aria-current]{background-size:100% var(--nav-line)}
 
 .social{display:flex;gap:18px;margin-top:22px;list-style:none}
 .social a{display:block;width:16px;height:16px;color:var(--ink);transition:color .25s,transform .25s var(--ease)}

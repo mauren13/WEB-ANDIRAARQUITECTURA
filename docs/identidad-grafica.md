@@ -42,7 +42,7 @@ Quince tonos propios, de claro a oscuro; el sitio no usa negro puro. Están docu
 
 ### Fucsias por sección
 
-El énfasis es **#E6007E**. Cada sección del menú tiene un paso de una degradación continua, de oscuro a tenue, en el orden del menú. Se ve en la línea bajo el menú y en la pestaña de categoría de cada tarjeta.
+El énfasis es **#E6007E**. Cada sección del menú tiene un paso de una degradación continua, de oscuro a tenue, en el orden del menú. Se ve en la línea de 3 px bajo el menú (`--nav-line`) y en la pestaña de categoría de cada tarjeta.
 
 | Paso | Hex | Sección | Clase |
 |---|---|---|---|
