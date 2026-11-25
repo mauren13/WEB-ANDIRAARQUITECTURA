@@ -266,7 +266,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .post math[display="block"]{display:block math;margin:22px 0;padding:18px 0;font-size:1.35em;text-align:center;background:var(--soft)}
 .post__rule{border:0;border-top:1px solid var(--soft);margin-top:48px}
 .post .post__ref{padding-left:28px;text-indent:-28px}
-.post__ref a{word-break:break-all;color:var(--muted)}
+.post__ref a{overflow-wrap:anywhere;color:var(--muted)}   /* corta las URL largas, no las palabras */
 
 .post .link-more{display:flex;width:max-content;margin-top:52px;clear:both}
 .post .link-more + .link-more{margin-top:20px}

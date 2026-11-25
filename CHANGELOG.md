@@ -1,5 +1,9 @@
 # Registro de versiones
 
+## v5.8 · 2026-11-24
+- Bitácora: el texto de la escala de grises se reemplaza por «Color y percepción en la documentación arquitectónica», con dos referencias (W3C y CIE) enlazadas. Las tarjetas de la portada y de Bitácora llevan el título nuevo.
+- Los enlaces de las referencias ya no cortan palabras a mitad de línea; solo las URL largas se parten.
+
 ## v5.7 · 2026-11-21
 - Página nueva «Andira · El origen de nuestro nombre» (nombre.html), con la carta sobre *Andira inermis*, fechada el 21-11-2026. Se enlaza desde una tarjeta de la portada y desde el final de Estudio.
 
