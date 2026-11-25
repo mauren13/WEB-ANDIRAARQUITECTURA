@@ -1,5 +1,9 @@
 # Registro de versiones
 
+## v5.11 · 2026-11-25
+- Contacto tiene su propio fucsia (#FBD9EC), más tenue que Estudio: la degradación del menú sigue de Proyectos a Contacto sin cortarse.
+- Documentación nueva en `docs/`: identidad gráfica, decisiones y pendientes.
+
 ## v5.10 · 2026-11-25
 - Las páginas piden `estilos.css` y los scripts con el número de versión (`?v=5.10`). Así el navegador descarga los estilos nuevos al publicar, en lugar de mostrar la página con la copia anterior (que en el post de grises dejaba un hueco junto a la tabla).
 

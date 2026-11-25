@@ -24,6 +24,7 @@ En línea: <https://andiraarquitectura.com>
 ├── collage.js               Reparte las tarjetas del collage en columnas
 ├── intro.js                 Intro de la portada (una vez por visita; ?intro la repite)
 ├── img/                     Imágenes, nombradas proyecto-vista.jpg
+├── docs/                    Identidad gráfica, decisiones y pendientes (no se publica)
 └── .github/workflows/       Publicación automática
 ```
 
@@ -45,12 +46,12 @@ Cada `push` a `main` que toque HTML, CSS, JS o imágenes ejecuta `.github/workfl
 
 **CSS.** Un solo archivo, ordenado en secciones numeradas (variables, base, encabezado, pie, collage, tarjetas, artículo, adaptaciones). Colores, tipografía y medidas se cambian en las variables de `:root`; no se usan colores ni medidas sueltas en las reglas. Cada cambio se integra en la regla de su sección, no como bloque al final. Sin `!important`, salvo en la regla de movimiento reducido.
 
-**Clases.** Notación BEM: bloque (`card`, `post`), elemento (`card__title`, `post__fig`) y variante (`card--side`, `card--statement`). `f1` a `f4` asignan el fucsia de cada sección: Proyectos, Colaboraciones, Bitácora y Estudio.
+**Clases.** Notación BEM: bloque (`card`, `post`), elemento (`card__title`, `post__fig`) y variante (`card--side`, `card--statement`). `f1` a `f5` asignan el fucsia de cada sección, en una degradación de oscuro a tenue: Proyectos, Acústica, Bitácora, Estudio y Contacto. Los valores están en [docs/identidad-grafica.md](docs/identidad-grafica.md).
 
 **HTML.** Sin estilos en línea, salvo `--r`, que fija la proporción de cada imagen del collage. Los comentarios indican el origen de los textos; los marcados como «texto original» no se editan.
 
 **Imágenes.** JPG de hasta 1400 px de lado; PNG solo cuando hace falta exactitud de color (escala de grises). Las renderizaciones se recortan para quitar el logo de la esquina.
 
-**Caché.** Las páginas cargan `estilos.css` y los scripts con `?v=` y el número de versión (`estilos.css?v=5.10`). Al publicar un cambio de CSS o JS se sube ese número en todas las páginas, para que los navegadores no usen la copia vieja.
+**Caché.** Las páginas cargan `estilos.css` y los scripts con `?v=` y el número de versión (`estilos.css?v=5.11`). Al publicar un cambio de CSS o JS se sube ese número en todas las páginas, para que los navegadores no usen la copia vieja.
 
 & Uno por cambio, con un título en imperativo que diga qué cambia y un cuerpo que explique por qué. Cada versión publicada se etiqueta (`v1.0` … `v5`) y se resume en [CHANGELOG.md](CHANGELOG.md).
